@@ -4,16 +4,18 @@ class_name MainMenu
 var options_scene = preload("res://scenes/menu/options_menu.tscn")
 
 func _ready():
-	%PlayButton.pressed.connect(on_play_pressed)
+	%PlayButton.pressed.connect(on_play_pressed.bind("res://scenes/main/main.tscn"))
+	%PlayButton2.pressed.connect(on_play_pressed.bind("res://scenes/main/main.tscn"))
 	%OptionsButton.pressed.connect(on_options_pressed)
 	%QuitButton.pressed.connect(on_quit_pressed)
 	
 
-func on_play_pressed():
+func on_play_pressed(scene_path):
 	SceneTransition.close_screen()
 	await SceneTransition.transition_halfway
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	get_tree().change_scene_to_file(scene_path)
 	SceneTransition.open_screen()
+
 
 
 func on_options_pressed():

@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Start And Options"
+config/name="Siberian Game Jam 2023"
+config/description="Game made for Siberian Game Jam 2023"
 run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
