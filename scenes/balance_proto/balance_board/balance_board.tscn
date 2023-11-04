@@ -1,13 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxj01n3rwt06y"]
+[gd_scene load_steps=3 format=3 uid="uid://cxj01n3rwt06y"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/balance_board/balance_board.gd" id="1_2fj12"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdys1"]
 radius = 12.0
 height = 52.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvv0f"]
-size = Vector2(44, 10)
 
 [node name="balance_board" type="CharacterBody2D"]
 collision_layer = 8
@@ -31,7 +28,3 @@ collision_mask = 256
 position = Vector2(0, -12)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_sdys1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_uvv0f")

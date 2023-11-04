@@ -13,6 +13,11 @@ var x_dir
 var is_applying_magnetic_force : bool = false
 var baby_mouse : BabyMouse
 
+@export_category("Baby mouse inertia")
+@export var standard_baby_mouse_inertia : float = 50
+@export var close_baby_mouse_inertia : float = 500
+
+
 
 @onready var magnetic_field = $MagneticField as Area2D
 
@@ -65,17 +70,19 @@ func apply_magnetic_force():
 	baby_mouse.apply_force(force)
 
 func on_body_entered_magnetic_field(body):
-	if !is_magnetic_field_active:
-		return
-	
 	if body is BabyMouse:
 		baby_mouse = (body as BabyMouse)
-		is_applying_magnetic_force = true
+		baby_mouse.inertia = close_baby_mouse_inertia
+	if !is_magnetic_field_active:
+		return
+		
+	is_applying_magnetic_force = true
 
 
 func on_body_exited_magnetic_field(body):
+	if body is BabyMouse:
+		baby_mouse = (body as BabyMouse)
+		baby_mouse.inertia = standard_baby_mouse_inertia
 	if !is_magnetic_field_active:
 		return
-	
-	if body is BabyMouse:
-		is_applying_magnetic_force = false
+	is_applying_magnetic_force = false

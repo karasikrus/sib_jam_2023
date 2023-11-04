@@ -41,7 +41,7 @@ collision_mask = 256
 shape = SubResource("RectangleShape2D_m3hvi")
 
 [node name="BoardTopLocation" type="Node2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -34)
 
 [node name="BottomRays" type="Node2D" parent="."]
 
