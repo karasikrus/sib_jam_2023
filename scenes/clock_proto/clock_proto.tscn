@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://didr3d6c1vctq"]
+
+[ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="1_q8pfd"]
+[ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="2_yrxdl"]
+[ext_resource type="PackedScene" uid="uid://cagpf7dl4gk1v" path="res://scenes/player/player.tscn" id="3_4r8s7"]
+[ext_resource type="PackedScene" uid="uid://bg7cylkwv1fu1" path="res://scenes/platform/hideable_platform.tscn" id="4_gohwb"]
+[ext_resource type="PackedScene" uid="uid://cksjpg4kfli4c" path="res://scenes/clock/clock.tscn" id="4_kpx52"]
+[ext_resource type="PackedScene" uid="uid://cadxttnixutmk" path="res://scenes/clock_sector/clock_sector.tscn" id="5_8k4ps"]
+
+[node name="ClockProto" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(270, 178)
+texture = ExtResource("1_q8pfd")
+
+[node name="Player" parent="." instance=ExtResource("3_4r8s7")]
+position = Vector2(907, 501)
+scale = Vector2(2, 2)
+jump_force = 1200.0
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("2_yrxdl")]
+position = Vector2(586, 611)
+scale = Vector2(17.64, 1)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("2_yrxdl")]
+position = Vector2(932, 155)
+scale = Vector2(6.88, 1)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("2_yrxdl")]
+position = Vector2(171, 247)
+scale = Vector2(3.56, 0.599999)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("2_yrxdl")]
+position = Vector2(481, 470)
+scale = Vector2(2.12683, 0.76317)
+
+[node name="HideablePlatform" parent="Platforms" node_paths=PackedStringArray("clock_sector") instance=ExtResource("4_gohwb")]
+position = Vector2(287, 370)
+scale = Vector2(2.60696, 0.631233)
+clock_sector = NodePath("../../ClockSector")
+
+[node name="HideablePlatform2" parent="Platforms" node_paths=PackedStringArray("clock_sector") instance=ExtResource("4_gohwb")]
+position = Vector2(509, 171)
+scale = Vector2(3.72696, 0.631233)
+clock_sector = NodePath("../../ClockSector2")
+
+[node name="Clock" parent="." instance=ExtResource("4_kpx52")]
+position = Vector2(561, 293)
+scale = Vector2(2, 2)
+
+[node name="ClockSector" parent="." instance=ExtResource("5_8k4ps")]
+position = Vector2(807, 402)
+rotation = 0.40164
+scale = Vector2(1, 4.47893)
+
+[node name="ClockSector2" parent="." instance=ExtResource("5_8k4ps")]
+position = Vector2(296, 308)
+rotation = -0.0359314
+scale = Vector2(1, 4.00066)
+normal_color = Color(0, 0.415686, 1, 1)
+highlight_color = Color(0.75, 0.853922, 1, 1)

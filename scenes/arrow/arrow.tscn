@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://chmwxj4r38363"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5gmuk"]
+a = Vector2(0, -2)
+
+[node name="Arrow" type="AnimatableBody2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 0, -8, -42, 0, -63, 8, -42, 8, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.12549, 0.12549, 0.27451, 1)
+polygon = PackedVector2Array(-8, 0, -8, -42, 0, -63, 8, -42, 8, 0)
+
+[node name="ArrowPointArea2D" type="Area2D" parent="."]
+position = Vector2(0, -63)
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowPointArea2D" groups=["arrow"]]
+scale = Vector2(0.5, 3.14)
+shape = SubResource("SegmentShape2D_5gmuk")

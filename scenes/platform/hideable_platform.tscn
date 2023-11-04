@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg7cylkwv1fu1"]
+
+[ext_resource type="Script" path="res://scenes/platform/hideable_platform.gd" id="1_ofhdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ald4"]
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ofhdf")
+active_color = Color(0, 0.815686, 0.145098, 1)
+hidden_color = Color(0.752941, 0.266667, 0, 0.87451)
+
+[node name="CollisionPolygon" type="Polygon2D" parent="."]
+color = Color(0.752941, 0.266667, 0, 0.87451)
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("RectangleShape2D_2ald4")
+disabled = true

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cadxttnixutmk"]
+
+[ext_resource type="Script" path="res://scenes/clock_sector/clock_sector.gd" id="1_miewu"]
+
+[node name="ClockSector" type="Area2D"]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("1_miewu")
+normal_color = Color(0, 0.415686, 1, 1)
+highlight_color = Color(0.75, 0.853922, 1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0.415686, 1, 1)
+polygon = PackedVector2Array(-27, 0, 0, -29, 28, 0, 0, 26)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-27, 0, 0, -29, 28, 0, 0, 26)
