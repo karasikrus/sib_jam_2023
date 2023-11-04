@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxj01n3rwt06y"]
+
+[ext_resource type="Script" path="res://scenes/balance_proto/balance_board/balance_board.gd" id="1_2fj12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cunns"]
+size = Vector2(20, 6)
+
+[node name="balance_board" type="CharacterBody2D"]
+scale = Vector2(1.88, 1)
+collision_mask = 15
+script = ExtResource("1_2fj12")
+balance_tilt_force = 10.0
+balance_reset_force = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cunns")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -3, 10, -3, 10, 3, -10, 3)

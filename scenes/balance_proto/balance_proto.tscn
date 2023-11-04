@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b615plc41oy7p"]
+
+[ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="2_5525t"]
+[ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="3_7khee"]
+[ext_resource type="PackedScene" uid="uid://df04pm6gl16en" path="res://scenes/balance_proto/balance_player/balance_player.tscn" id="3_ed0x8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(623, 595)
+scale = Vector2(23.6012, 1.16024)
+
+[node name="Platform2" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(666, 280)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform5" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(492, 216)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform6" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(161, 293)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform7" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(30, 317)
+scale = Vector2(-1.00727, 9.86781)
+
+[node name="Platform8" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(1120, 317)
+scale = Vector2(-1.00727, 9.86781)
+
+[node name="Platform3" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(1059, 404)
+scale = Vector2(6.96661, 0.626969)
+
+[node name="Platform4" parent="." instance=ExtResource("2_5525t")]
+position = Vector2(595, 513)
+rotation = -0.417722
+scale = Vector2(8.57285, 0.626969)
+
+[node name="BalancePlayer" parent="." instance=ExtResource("3_ed0x8")]
+position = Vector2(142, 508)
+scale = Vector2(2, 2)
+jump_force = 1000.0
+
+[node name="BabyMouse" parent="." instance=ExtResource("3_7khee")]
+position = Vector2(140, 442)

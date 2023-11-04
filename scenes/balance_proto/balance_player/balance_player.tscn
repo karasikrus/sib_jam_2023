@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://df04pm6gl16en"]
+
+[ext_resource type="Script" path="res://scenes/balance_proto/balance_player/balance_player.gd" id="1_lpjci"]
+[ext_resource type="PackedScene" uid="uid://cxj01n3rwt06y" path="res://scenes/balance_proto/balance_board/balance_board.tscn" id="2_1nu8q"]
+
+[sub_resource type="Gradient" id="Gradient_73s8s"]
+offsets = PackedFloat32Array(0, 0.977778)
+colors = PackedColorArray(0.28125, 0.557204, 0.531277, 1, 0.177841, 0.306703, 0.410156, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ssbtx"]
+gradient = SubResource("Gradient_73s8s")
+fill = 1
+fill_from = Vector2(0.479798, 0.454545)
+fill_to = Vector2(0.671717, 0.813131)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ioghl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3hvi"]
+size = Vector2(42, 6)
+
+[node name="BalancePlayer" type="CharacterBody2D"]
+collision_mask = 14
+script = ExtResource("1_lpjci")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.320001, 0.479999)
+texture = SubResource("GradientTexture2D_ssbtx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ioghl")
+
+[node name="balance_board" parent="." instance=ExtResource("2_1nu8q")]
+position = Vector2(0, -19)
+balance_tilt_force = 9.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 12)
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_m3hvi")
+
+[node name="BoardTopLocation" type="Node2D" parent="."]
+position = Vector2(0, -32)
