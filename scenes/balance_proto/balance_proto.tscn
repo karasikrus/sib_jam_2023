@@ -44,5 +44,15 @@ position = Vector2(142, 508)
 scale = Vector2(2, 2)
 jump_force = 1000.0
 
+[node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
+scale = Vector2(0.5, 0.5)
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.3
+
 [node name="BabyMouse" parent="." instance=ExtResource("3_7khee")]
 position = Vector2(140, 442)

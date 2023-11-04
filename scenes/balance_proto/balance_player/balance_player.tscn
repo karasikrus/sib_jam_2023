@@ -31,7 +31,8 @@ shape = SubResource("CapsuleShape2D_ioghl")
 
 [node name="balance_board" parent="." instance=ExtResource("2_1nu8q")]
 position = Vector2(0, -19)
-balance_tilt_force = 9.0
+balance_tilt_force = 3.0
+balance_reset_force = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 12)
