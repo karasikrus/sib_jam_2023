@@ -1,11 +1,25 @@
 extends CharacterBody2D
 class_name BalanceBoard
 
-var balace_point : float = 0 # from -1 to 1
+var balance_point : float = 0 # from -1 to 1
 var x_dir
 @export var balance_tilt_force : float = 0.02
 @export var balance_reset_force : float = 0.01
 @export var max_angle : float = 30
+
+@export_category("Magnetic field")
+@export var is_magnetic_field_active : bool = false
+@export var magnetic_field_power : float = 10
+var is_applying_magnetic_force : bool = false
+var baby_mouse : BabyMouse
+
+
+@onready var magnetic_field = $MagneticField as Area2D
+
+func _ready():
+	magnetic_field.body_entered.connect(on_body_entered_magnetic_field)
+	magnetic_field.body_exited.connect(on_body_exited_magnetic_field)
+
 
 func get_input() -> Dictionary:
 	return {
@@ -19,25 +33,49 @@ func get_input() -> Dictionary:
 func _physics_process(delta):
 	balance_movement(delta)
 	tilt_board()
+	apply_magnetic_force()
 
 
 func balance_movement(delta):
 	x_dir = get_input()["x"]
 	
 	#reset to staring position
-	if x_dir == 0:
-		if balace_point > 0:
-			balace_point = clampf(balace_point - balance_reset_force * delta, 0, 1)
-		if balace_point < 0:
-			balace_point = clampf(balace_point + balance_reset_force * delta, -1, 0)
-			
-	else: #tilt forward
-		balace_point = clampf(balace_point + balance_reset_force * delta * x_dir, -1, 1)
+	if balance_point > 0 and x_dir <= 0:
+		balance_point = clampf(balance_point - balance_reset_force * delta, 0, 1)
+	elif balance_point < 0 and x_dir >= 0:
+		balance_point = clampf(balance_point + balance_reset_force * delta, -1, 0)
+		
+	#tilt forward
+	balance_point = clampf(balance_point + balance_reset_force * delta * x_dir, -1, 1)
 
 func tilt_board():
-	var weight : float = (balace_point + 1)/2 # from -1 to 1 -> from 0 to 1
+	var weight : float = (balance_point + 1)/2 # from -1 to 1 -> from 0 to 1
 	var left_tilt = deg_to_rad(-max_angle)
 	var right_tilt = deg_to_rad(max_angle)
 	var angle = lerp_angle(left_tilt, right_tilt, weight)
 	
 	rotation = angle
+
+func apply_magnetic_force():
+	if !is_applying_magnetic_force:
+		return
+	
+	var force = (magnetic_field.global_position - baby_mouse.global_position)\
+			.normalized() * magnetic_field_power
+	baby_mouse.apply_force(force)
+
+func on_body_entered_magnetic_field(body):
+	if !is_magnetic_field_active:
+		return
+	
+	if body is BabyMouse:
+		baby_mouse = (body as BabyMouse)
+		is_applying_magnetic_force = true
+
+
+func on_body_exited_magnetic_field(body):
+	if !is_magnetic_field_active:
+		return
+	
+	if body is BabyMouse:
+		is_applying_magnetic_force = false

@@ -69,8 +69,11 @@ jump={
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_physics/layer_2="ground"
+2d_physics/layer_4="mouse_carrier"
 2d_physics/layer_5="arrow_point"
 2d_physics/layer_6="clock_sector"
+2d_physics/layer_9="baby_mouse"
 
 [rendering]
 

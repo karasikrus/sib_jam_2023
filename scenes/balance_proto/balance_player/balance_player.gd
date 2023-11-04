@@ -31,6 +31,10 @@ var is_jumping := false
 # ----------------------------------- #
 @onready var area_2d = $Area2D
 @onready var board_top_location = $BoardTopLocation
+@onready var ray_cast_2d = $BottomRays/RayCast2D
+@onready var ray_cast_2d_2 = $BottomRays/RayCast2D2
+@onready var ray_cast_2d_3 = $BottomRays/RayCast2D3
+
 
 
 func _ready():
@@ -38,9 +42,18 @@ func _ready():
 
 
 func on_body_near_legs(body: Node2D):
-	if body is BabyMouse:
+	if body is BabyMouse and is_near_floor():
+		print("teleportin")
 		(body as BabyMouse).teleport(board_top_location.global_position)
 
+
+func is_near_floor():
+	return ray_cast_2d.collide_with_bodies or\
+	ray_cast_2d_2.collide_with_bodies or\
+	ray_cast_2d_3.collide_with_bodies
+	
+	
+	
 # All iputs we want to keep track of
 func get_input() -> Dictionary:
 	return {
@@ -133,7 +146,7 @@ func apply_gravity(delta: float) -> void:
 	var applied_gravity : float = 0
 	
 	# No gravity if we are grounded
-	if jump_coyote_timer > 0:
+	if is_on_floor():
 		return
 	
 	# Normal gravity limit
