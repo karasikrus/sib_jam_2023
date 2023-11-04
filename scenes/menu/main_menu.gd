@@ -4,8 +4,7 @@ class_name MainMenu
 var options_scene = preload("res://scenes/menu/options_menu.tscn")
 
 func _ready():
-	%PlayButton.pressed.connect(on_play_pressed.bind("res://scenes/clock_proto/clock_proto.tscn"))
-	%PlayButton2.pressed.connect(on_play_pressed.bind("res://scenes/balance_proto/balance_proto.tscn"))
+	%PlayButton.pressed.connect(on_play_pressed.bind("res://scenes/balance_proto/balance_proto_2.tscn"))
 	%OptionsButton.pressed.connect(on_options_pressed)
 	%QuitButton.pressed.connect(on_quit_pressed)
 	
