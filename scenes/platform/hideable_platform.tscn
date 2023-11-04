@@ -11,7 +11,7 @@ script = ExtResource("1_ofhdf")
 active_color = Color(0, 0.815686, 0.145098, 1)
 hidden_color = Color(0.752941, 0.266667, 0, 0.87451)
 
-[node name="CollisionPolygon" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.752941, 0.266667, 0, 0.87451)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 

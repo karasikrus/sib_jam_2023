@@ -6,7 +6,7 @@ class_name HideablePlatform
 @export var clock_sector: ClockSector
 
 @onready var collision_shape_2d = $CollisionShape2D
-@onready var collision_polygon = $CollisionPolygon
+@onready var polygon_2d = $Polygon2D
 
 
 func _ready():
@@ -17,11 +17,11 @@ func _ready():
 func hide_platform():
 	print("hide")
 	collision_shape_2d.set_deferred("disabled", true)
-	collision_polygon.color = hidden_color
+	polygon_2d.color = hidden_color
 	
 
 
 func show_platform():
 	print("show")
 	collision_shape_2d.set_deferred("disabled", false)
-	collision_polygon.color = active_color
+	polygon_2d.color = active_color
