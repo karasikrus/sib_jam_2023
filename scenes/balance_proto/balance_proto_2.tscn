@@ -1,0 +1,309 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpreruwptnwgr"]
+
+[ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="1_febpg"]
+[ext_resource type="PackedScene" uid="uid://df04pm6gl16en" path="res://scenes/balance_proto/balance_player/balance_player.tscn" id="2_26kko"]
+[ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="3_f1xin"]
+
+[node name="Main" type="Node2D"]
+
+[node name="BabyMouse" parent="." instance=ExtResource("3_f1xin")]
+position = Vector2(257, 399)
+gravity_scale = 3.0
+
+[node name="BalancePlayer" parent="." instance=ExtResource("2_26kko")]
+position = Vector2(261, 504)
+scale = Vector2(2, 2)
+jump_force = 1200.0
+
+[node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
+scale = Vector2(0.5, 0.5)
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.3
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(623, 595)
+scale = Vector2(23.6012, 1.16024)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(585, -2922)
+scale = Vector2(23.6012, 1.16024)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(389, -134)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform20" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1046, -407)
+rotation = 0.000296414
+scale = Vector2(2.58523, 1.53414)
+
+[node name="Platform17" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(115, -246)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform26" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(795, -540)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform27" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(532, -654)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform29" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(512, -876)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform30" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(746, -992)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform31" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1001, -1107)
+scale = Vector2(3.04661, 0.626969)
+
+[node name="Platform37" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1058, -1437)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform51" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(723, -1733)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform53" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1054, -1993)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform52" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1423, -2457)
+scale = Vector2(0.72661, 0.626969)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(154, 201)
+scale = Vector2(4.052, 0.587)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(462, -248)
+rotation = 1.57183
+scale = Vector2(3.657, 0.627)
+
+[node name="Platform23" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(560, -255)
+rotation = 1.57183
+scale = Vector2(2.81688, 0.627)
+
+[node name="Platform24" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(710, -228)
+rotation = 1.57183
+scale = Vector2(3.24525, 0.712455)
+
+[node name="Platform14" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1504, 127)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform38" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(-155, 574)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform39" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(-153, -125)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform40" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(-155, -763)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform63" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(-159, -2046)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform64" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(-119, -2699)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform43" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(738, -1325)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform45" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(261, -1328)
+scale = Vector2(7.16661, 0.626969)
+
+[node name="Platform61" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(394, -2629)
+scale = Vector2(7.16661, 0.626969)
+
+[node name="Platform41" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(-149, -1405)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(686, 227)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform21" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(473, -355)
+scale = Vector2(3.44661, 0.626969)
+
+[node name="Platform54" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1084, -2137)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform55" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(853, -2249)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform56" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1077, -2381)
+scale = Vector2(1.44661, 0.626969)
+
+[node name="Platform28" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(166, -763)
+rotation = 0.0034083
+scale = Vector2(4.84661, 0.626969)
+
+[node name="Platform22" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(905, -352)
+scale = Vector2(6.80661, 0.626969)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(30, 317)
+rotation = 3.14159
+scale = Vector2(1.007, -100)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1120, 317)
+rotation = 3.14159
+scale = Vector2(1.007, -100)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1061, 434)
+scale = Vector2(6.96661, 0.626969)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(625, 517)
+rotation = -0.361735
+scale = Vector2(7.43028, 0.626969)
+
+[node name="Platform18" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(499, -158)
+rotation = -0.417722
+scale = Vector2(1.95246, 0.626969)
+
+[node name="Platform32" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(306, -1476)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform49" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(135, -1624)
+scale = Vector2(2.32661, 0.626969)
+
+[node name="Platform33" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(796, -1423)
+rotation = 1.57183
+scale = Vector2(3.657, 0.627)
+
+[node name="Platform50" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(757, -1814)
+rotation = 1.57183
+scale = Vector2(3.13717, 0.627)
+
+[node name="Platform58" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(812, -2284)
+rotation = 1.57183
+scale = Vector2(1.77745, 0.627)
+
+[node name="Platform59" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(820, -2487)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform60" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(779, -2522)
+rotation = 1.57183
+scale = Vector2(1.77745, 0.627)
+
+[node name="Platform48" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1782, -1699)
+rotation = 1.57183
+scale = Vector2(4.01688, 0.627)
+
+[node name="Platform46" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(471, -1312)
+rotation = 1.57183
+scale = Vector2(3.657, 0.627)
+
+[node name="Platform34" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(410, -1635)
+rotation = 1.57183
+scale = Vector2(2.33696, 0.627)
+
+[node name="Platform35" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(501, -1730)
+scale = Vector2(3.44661, 0.626969)
+
+[node name="Platform36" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(383, -1522)
+rotation = -1.02416
+scale = Vector2(1.95246, 0.626969)
+
+[node name="Platform25" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(801, -285)
+rotation = -0.417722
+scale = Vector2(3.78831, 0.626969)
+
+[node name="Platform65" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(583, -169)
+rotation = -2.69254
+scale = Vector2(1.55248, 0.626969)
+
+[node name="Platform47" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(258, -1114)
+rotation = -0.417722
+scale = Vector2(7.75249, 0.626969)
+
+[node name="Platform57" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(688, -2414)
+rotation = -0.640847
+scale = Vector2(3.83719, 0.626969)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1070, 361)
+scale = Vector2(0.997, 1.662)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1524, 248)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform44" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1044, -1180)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform15" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(129, 127)
+scale = Vector2(2.537, 1.722)
+
+[node name="Platform16" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(93, 17)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(651, 154)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform19" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1874, -2247)
+scale = Vector2(2.897, 2.337)
+
+[node name="Platform42" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(1420, -1825)
+scale = Vector2(2.897, 5.857)
+
+[node name="Platform62" parent="Platforms" instance=ExtResource("1_febpg")]
+position = Vector2(259, -2330)
+scale = Vector2(2.897, 8.617)
