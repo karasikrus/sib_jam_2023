@@ -7,7 +7,7 @@ class_name HideablePlatform
 
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var polygon_2d = $Polygon2D
-
+#test comment
 
 func _ready():
 	clock_sector.time_period_started.connect(show_platform)
