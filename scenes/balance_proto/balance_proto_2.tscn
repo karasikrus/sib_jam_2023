@@ -1,22 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpreruwptnwgr"]
+[gd_scene load_steps=5 format=3 uid="uid://bpreruwptnwgr"]
 
 [ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="1_febpg"]
 [ext_resource type="PackedScene" uid="uid://df04pm6gl16en" path="res://scenes/balance_proto/balance_player/balance_player.tscn" id="2_26kko"]
 [ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="3_f1xin"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvdfq"]
+bounce = 1.0
+
 [node name="Main" type="Node2D"]
 
 [node name="BabyMouse" parent="." instance=ExtResource("3_f1xin")]
-position = Vector2(257, 399)
-gravity_scale = 3.0
+position = Vector2(195, 412)
 
 [node name="BalancePlayer" parent="." instance=ExtResource("2_26kko")]
-position = Vector2(261, 504)
+position = Vector2(199, 517)
 scale = Vector2(2, 2)
 jump_force = 1200.0
 
 [node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
 scale = Vector2(0.5, 0.5)
+zoom = Vector2(1.67, 1.67)
 limit_left = 0
 limit_right = 1152
 limit_bottom = 648
@@ -43,6 +46,7 @@ scale = Vector2(1.80661, 0.626969)
 position = Vector2(1046, -407)
 rotation = 0.000296414
 scale = Vector2(2.58523, 1.53414)
+physics_material_override = SubResource("PhysicsMaterial_nvdfq")
 
 [node name="Platform17" parent="Platforms" instance=ExtResource("1_febpg")]
 position = Vector2(115, -246)
@@ -178,9 +182,9 @@ rotation = 3.14159
 scale = Vector2(1.007, -100)
 
 [node name="Platform8" parent="Platforms" instance=ExtResource("1_febpg")]
-position = Vector2(1120, 317)
+position = Vector2(1169, 317)
 rotation = 3.14159
-scale = Vector2(1.007, -100)
+scale = Vector2(2.807, -100)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("1_febpg")]
 position = Vector2(1061, 434)

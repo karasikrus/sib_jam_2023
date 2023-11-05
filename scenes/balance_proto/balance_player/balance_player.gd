@@ -34,6 +34,8 @@ var is_jumping := false
 @onready var ray_cast_2d = $BottomRays/RayCast2D
 @onready var ray_cast_2d_2 = $BottomRays/RayCast2D2
 @onready var ray_cast_2d_3 = $BottomRays/RayCast2D3
+@onready var animation_player = $AnimationPlayer
+@onready var sprite = $Sprite
 
 
 
@@ -41,9 +43,12 @@ func _ready():
 	area_2d.body_entered.connect(on_body_near_legs)
 
 
+func _process(delta):
+	animate()
+
+
 func on_body_near_legs(body: Node2D):
 	if body is BabyMouse and is_near_floor():
-		print("teleportin")
 		(body as BabyMouse).teleport(board_top_location.global_position)
 
 
@@ -170,3 +175,15 @@ func timers(delta: float) -> void:
 	jump_coyote_timer -= delta
 	jump_buffer_timer -= delta
 
+
+func animate():
+	if x_dir > 0:
+		sprite.scale.x = -abs(sprite.scale.x)
+	elif x_dir < 0:
+		sprite.scale.x = abs(sprite.scale.x)
+	if velocity.x > 0:		
+		animation_player.play("walk")
+	if velocity.x < 0:		
+		animation_player.play("walk")
+	if velocity.x == 0:
+		animation_player.play("idle")

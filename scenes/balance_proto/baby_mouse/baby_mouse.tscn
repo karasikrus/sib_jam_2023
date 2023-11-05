@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6otlsimcn4nr"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/baby_mouse/baby_mouse.gd" id="1_727ms"]
+[ext_resource type="Texture2D" uid="uid://cwg5gps5wp1gs" path="res://scenes/balance_proto/baby_mouse/мыш.png" id="2_k0n5n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_px6gg"]
 rough = true
@@ -8,11 +9,10 @@ rough = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_r63jk"]
 custom_solver_bias = 0.95
 
-[sub_resource type="SphereMesh" id="SphereMesh_ln5ha"]
-
 [node name="BabyMouse" type="RigidBody2D"]
 collision_layer = 256
-collision_mask = 15
+collision_mask = 14
+collision_priority = 10.0
 inertia = 50.0
 physics_material_override = SubResource("PhysicsMaterial_px6gg")
 gravity_scale = 3.0
@@ -21,28 +21,10 @@ can_sleep = false
 linear_damp = 1.0
 script = ExtResource("1_727ms")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.702698, -1.7027)
+scale = Vector2(0.239583, 0.239583)
+texture = ExtResource("2_k0n5n")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_r63jk")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.764706, 0.00392157, 0.701961, 1)
-scale = Vector2(19.4872, 19.4872)
-mesh = SubResource("SphereMesh_ln5ha")
-
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-modulate = Color(0.372549, 0.0352941, 0.345098, 1)
-position = Vector2(-8, -10)
-scale = Vector2(12.2163, 13.1895)
-mesh = SubResource("SphereMesh_ln5ha")
-
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
-modulate = Color(0.372549, 0.0352941, 0.345098, 1)
-position = Vector2(8, -10)
-scale = Vector2(10.8786, 10.8786)
-mesh = SubResource("SphereMesh_ln5ha")
-
-[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
-modulate = Color(0.372549, 0.0352941, 0.345098, 1)
-position = Vector2(1.19209e-07, 3)
-scale = Vector2(2.61124, 3.35983)
-mesh = SubResource("SphereMesh_ln5ha")

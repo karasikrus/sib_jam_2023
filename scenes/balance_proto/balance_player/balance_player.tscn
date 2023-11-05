@@ -1,36 +1,165 @@
-[gd_scene load_steps=7 format=3 uid="uid://df04pm6gl16en"]
+[gd_scene load_steps=11 format=3 uid="uid://df04pm6gl16en"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/balance_player/balance_player.gd" id="1_lpjci"]
 [ext_resource type="PackedScene" uid="uid://cxj01n3rwt06y" path="res://scenes/balance_proto/balance_board/balance_board.tscn" id="2_1nu8q"]
+[ext_resource type="Texture2D" uid="uid://w7x1tv34quf4" path="res://scenes/balance_proto/balance_player/sprites/idle_itch.png" id="3_jcsm7"]
+[ext_resource type="Texture2D" uid="uid://cwcy7mc2e6d50" path="res://scenes/balance_proto/balance_player/sprites/walk.png" id="3_wjcf5"]
 
-[sub_resource type="Gradient" id="Gradient_73s8s"]
-offsets = PackedFloat32Array(0, 0.977778)
-colors = PackedColorArray(0.28125, 0.557204, 0.531277, 1, 0.177841, 0.306703, 0.410156, 1)
+[sub_resource type="Animation" id="Animation_3o8s8"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_wjcf5")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ssbtx"]
-gradient = SubResource("Gradient_73s8s")
-fill = 1
-fill_from = Vector2(0.479798, 0.454545)
-fill_to = Vector2(0.671717, 0.813131)
+[sub_resource type="Animation" id="Animation_odl7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_wjcf5")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_2fdub"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_jcsm7")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8, 1.1, 1.4, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22kiq"]
+_data = {
+"RESET": SubResource("Animation_odl7x"),
+"idle": SubResource("Animation_2fdub"),
+"walk": SubResource("Animation_3o8s8")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ioghl"]
+height = 48.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3hvi"]
-size = Vector2(30, 6)
+size = Vector2(38, 6)
 
 [node name="BalancePlayer" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_lpjci")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.320001, 0.479999)
-texture = SubResource("GradientTexture2D_ssbtx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ioghl")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_22kiq")
+}
 
 [node name="balance_board" parent="." instance=ExtResource("2_1nu8q")]
 position = Vector2(0, -19)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-6, -1)
+scale = Vector2(0.0794944, 0.119241)
+texture = ExtResource("3_wjcf5")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_ioghl")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 12)
@@ -41,7 +170,7 @@ collision_mask = 256
 shape = SubResource("RectangleShape2D_m3hvi")
 
 [node name="BoardTopLocation" type="Node2D" parent="."]
-position = Vector2(0, -34)
+position = Vector2(0, -30)
 
 [node name="BottomRays" type="Node2D" parent="."]
 
@@ -51,11 +180,11 @@ target_position = Vector2(0, 7)
 collision_mask = 2
 
 [node name="RayCast2D2" type="RayCast2D" parent="BottomRays"]
-position = Vector2(-15, 12)
+position = Vector2(-19, 12)
 target_position = Vector2(0, 7)
 collision_mask = 2
 
 [node name="RayCast2D3" type="RayCast2D" parent="BottomRays"]
-position = Vector2(15, 12)
+position = Vector2(19, 12)
 target_position = Vector2(0, 7)
 collision_mask = 2
