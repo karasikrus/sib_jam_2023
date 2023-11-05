@@ -1,0 +1,496 @@
+[gd_scene load_steps=9 format=3 uid="uid://46vyvn233cqi"]
+
+[ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="1_j57vw"]
+[ext_resource type="PackedScene" uid="uid://df04pm6gl16en" path="res://scenes/balance_proto/balance_player/balance_player.tscn" id="2_gu3pf"]
+[ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="3_ehvyx"]
+[ext_resource type="PackedScene" uid="uid://crgm04b4as6mr" path="res://scenes/platform/ice_platform.tscn" id="4_rmc25"]
+[ext_resource type="PackedScene" uid="uid://boak75g7sk8ig" path="res://scenes/platform/web_platform.tscn" id="5_jw2ia"]
+[ext_resource type="PackedScene" uid="uid://oxmhv6mj5eck" path="res://scenes/platform/launch_trigger.tscn" id="6_jbwx2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvdfq"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86fmi"]
+size = Vector2(1145, 650)
+
+[node name="Main" type="Node2D"]
+
+[node name="BabyMouse" parent="." instance=ExtResource("1_j57vw")]
+position = Vector2(595, -4556)
+
+[node name="BalancePlayer" parent="." instance=ExtResource("2_gu3pf")]
+position = Vector2(597, -4454)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(1.67, 1.67)
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.3
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0.466667, 0.45098, 1, 1)
+position = Vector2(-838, -3519)
+scale = Vector2(23.6012, 1.16024)
+collision_layer = 2050
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(569, -4260)
+scale = Vector2(23.6012, 1.16024)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(389, -134)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform20" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0.803922, 0.258824, 0.258824, 1)
+position = Vector2(-532, -1717)
+rotation = 0.000296414
+scale = Vector2(2.58523, 1.53414)
+collision_layer = 4098
+physics_material_override = SubResource("PhysicsMaterial_nvdfq")
+
+[node name="Platform17" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(115, -246)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform26" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0.466667, 0.45098, 1, 1)
+position = Vector2(-168, -539)
+scale = Vector2(2.28661, 0.626969)
+collision_layer = 2050
+
+[node name="Platform27" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(532, -654)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform74" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(773, -540)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform29" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(480, -876)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform30" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(807, -992)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform31" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1001, -1107)
+scale = Vector2(3.04661, 0.626969)
+
+[node name="Platform37" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1058, -1437)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform51" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(723, -1733)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform53" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-433, -2000)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform52" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1423, -2457)
+scale = Vector2(0.72661, 0.626969)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(154, 201)
+scale = Vector2(4.052, 0.587)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(462, -248)
+rotation = 1.57183
+scale = Vector2(3.657, 0.627)
+
+[node name="Platform23" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(560, -255)
+rotation = 1.57183
+scale = Vector2(2.81688, 0.627)
+
+[node name="Platform24" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(710, -228)
+rotation = 1.57183
+scale = Vector2(3.24525, 0.712455)
+
+[node name="Platform14" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1504, 127)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform66" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(2141, -4559)
+scale = Vector2(18, 0.8)
+
+[node name="Platform70" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(575, 627)
+scale = Vector2(18, 0.8)
+
+[node name="Platform68" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(22, -3382)
+scale = Vector2(0.8, 10)
+
+[node name="Platform69" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1126, -3382)
+scale = Vector2(0.8, 10)
+
+[node name="Platform79" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1905, -3079)
+scale = Vector2(18, 0.8)
+
+[node name="Platform80" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1903, -3686)
+scale = Vector2(18, 0.8)
+
+[node name="Platform81" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1353, -3389)
+scale = Vector2(0.8, 10)
+
+[node name="Platform82" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(2457, -3389)
+scale = Vector2(0.8, 10)
+
+[node name="Platform38" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-155, 574)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform39" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-153, -125)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform40" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-155, -763)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform63" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-159, -2046)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform64" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1249, -2738)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform43" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(738, -1325)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform45" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(261, -1328)
+scale = Vector2(7.16661, 0.626969)
+
+[node name="Platform61" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1093, -2636)
+scale = Vector2(7.16661, 0.626969)
+
+[node name="Platform67" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(233, -2754)
+scale = Vector2(7.16661, 0.626969)
+
+[node name="Platform91" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(515, -3758)
+scale = Vector2(1.212, 0.627)
+
+[node name="Platform76" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(529, -3089)
+scale = Vector2(6.482, 0.627)
+
+[node name="Platform78" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(307, -3385)
+scale = Vector2(7.842, 0.627)
+
+[node name="Platform83" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(930, -3387)
+scale = Vector2(5.642, 0.627)
+
+[node name="Platform41" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-149, -1405)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform88" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-130, -3350)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform89" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-160, -2709)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform92" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-134, -3991)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(686, 227)
+scale = Vector2(4.80661, 0.626969)
+
+[node name="Platform54" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-403, -2144)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform84" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(109, -2050)
+scale = Vector2(1.382, 0.627)
+
+[node name="Platform85" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(64, -2173)
+scale = Vector2(1.20661, 0.626969)
+
+[node name="Platform55" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-634, -2256)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform56" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-410, -2388)
+scale = Vector2(1.44661, 0.626969)
+
+[node name="Platform28" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(166, -763)
+rotation = 0.0034083
+scale = Vector2(4.84661, 0.626969)
+
+[node name="Platform22" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(905, -352)
+scale = Vector2(6.80661, 0.626969)
+
+[node name="Platform73" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(448, -355)
+scale = Vector2(4.142, 0.627)
+
+[node name="Platform71" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(902, 433)
+scale = Vector2(6.80661, 0.626969)
+
+[node name="Platform72" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(500, 531)
+rotation = -0.47587
+scale = Vector2(6.80661, 0.626969)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(30, -2557)
+rotation = 3.14159
+scale = Vector2(1.007, -100)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1120, -2569)
+rotation = 3.14159
+scale = Vector2(1.007, -100)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1535, 287)
+rotation = 3.14159
+scale = Vector2(2.807, -100)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0.466667, 0.45098, 1, 1)
+position = Vector2(-883, -3376)
+rotation = -0.361735
+scale = Vector2(7.43028, 0.626969)
+collision_layer = 2050
+
+[node name="Platform18" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(499, -158)
+rotation = -0.417722
+scale = Vector2(1.95246, 0.626969)
+
+[node name="Platform32" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(306, -1476)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform49" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(135, -1624)
+scale = Vector2(2.32661, 0.626969)
+
+[node name="Platform33" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(796, -1423)
+rotation = 1.57183
+scale = Vector2(3.657, 0.627)
+
+[node name="Platform86" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(760, -1812)
+rotation = 1.57183
+scale = Vector2(3.057, 0.627)
+
+[node name="Platform58" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-675, -2291)
+rotation = 1.57183
+scale = Vector2(1.77745, 0.627)
+
+[node name="Platform59" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-667, -2494)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform60" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-708, -2529)
+rotation = 1.57183
+scale = Vector2(1.77745, 0.627)
+
+[node name="Platform48" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1782, -1699)
+rotation = 1.57183
+scale = Vector2(4.01688, 0.627)
+
+[node name="Platform46" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(471, -1312)
+rotation = 1.57183
+scale = Vector2(3.657, 0.627)
+
+[node name="Platform34" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(410, -1635)
+rotation = 1.57183
+scale = Vector2(2.33696, 0.627)
+
+[node name="Platform90" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(741, -3143)
+rotation = 1.57183
+scale = Vector2(2.33696, 0.627)
+
+[node name="Platform35" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-886, -1783)
+scale = Vector2(3.44661, 0.626969)
+
+[node name="Platform36" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(380, -1522)
+rotation = -1.02416
+scale = Vector2(1.95246, 0.626969)
+
+[node name="Platform25" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(801, -285)
+rotation = -0.417722
+scale = Vector2(3.78831, 0.626969)
+
+[node name="Platform65" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(583, -169)
+rotation = -2.69254
+scale = Vector2(1.55248, 0.626969)
+
+[node name="Platform47" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(258, -1114)
+rotation = -0.417722
+scale = Vector2(7.75249, 0.626969)
+
+[node name="Platform57" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-799, -2421)
+rotation = -0.640847
+scale = Vector2(3.83719, 0.626969)
+
+[node name="Platform87" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(970, -2269)
+rotation = -0.640847
+scale = Vector2(5.812, 0.627)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1070, 361)
+scale = Vector2(0.997, 1.662)
+
+[node name="Platform44" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1044, -1180)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform15" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(129, 127)
+scale = Vector2(2.537, 1.722)
+
+[node name="Platform16" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(93, 17)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(651, 154)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform75" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1031, -405)
+scale = Vector2(1.737, 1.662)
+
+[node name="Platform19" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1773, -2508)
+scale = Vector2(2.897, 2.337)
+
+[node name="Platform50" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1910, -2137)
+scale = Vector2(4.082, 1.787)
+
+[node name="Platform42" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(2093, -2560)
+scale = Vector2(2.897, 3.922)
+
+[node name="Platform77" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(2252, -2851)
+scale = Vector2(3.042, 4.242)
+
+[node name="Platform62" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1228, -2337)
+scale = Vector2(2.897, 8.617)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(3613, -1759)
+shape = SubResource("RectangleShape2D_86fmi")
+
+[node name="IcePlatform" parent="." instance=ExtResource("4_rmc25")]
+position = Vector2(759, -2638)
+scale = Vector2(2.667, 0.627)
+
+[node name="IcePlatform2" parent="." instance=ExtResource("4_rmc25")]
+position = Vector2(328, -2510)
+scale = Vector2(2.667, 0.627)
+
+[node name="IcePlatform3" parent="." instance=ExtResource("4_rmc25")]
+position = Vector2(695, -2385)
+scale = Vector2(2.667, 0.627)
+
+[node name="IcePlatform4" parent="." instance=ExtResource("4_rmc25")]
+position = Vector2(397, -2285)
+scale = Vector2(2.667, 0.627)
+
+[node name="IcePlatform5" parent="." instance=ExtResource("4_rmc25")]
+position = Vector2(472, -1996)
+scale = Vector2(2.912, 0.627)
+
+[node name="IcePlatform6" parent="." instance=ExtResource("4_rmc25")]
+position = Vector2(501, -1733)
+scale = Vector2(3.447, 0.68)
+
+[node name="WebPlatform" parent="." instance=ExtResource("5_jw2ia")]
+position = Vector2(134, -2817)
+rotation = 0.49832
+scale = Vector2(2.725, 0.63)
+
+[node name="WebPlatform3" parent="." instance=ExtResource("5_jw2ia")]
+position = Vector2(401, -4472)
+rotation = 0.573588
+scale = Vector2(2.725, 0.63)
+
+[node name="launch_trigger" parent="WebPlatform3" instance=ExtResource("6_jbwx2")]
+position = Vector2(-0.103821, -29.9458)
+rotation = 0.0138114
+scale = Vector2(2.59657, 2.60316)
+skew = -0.0130732
+launch_force_y = -1500.0
+
+[node name="WebPlatform4" parent="." instance=ExtResource("5_jw2ia")]
+position = Vector2(724, -4610)
+rotation = -0.675853
+scale = Vector2(2.725, 0.63)
+
+[node name="launch_trigger" parent="WebPlatform4" instance=ExtResource("6_jbwx2")]
+position = Vector2(-0.103821, -29.9458)
+rotation = 0.0138114
+scale = Vector2(2.59657, 2.60316)
+skew = -0.0130732
+launch_force_y = -1500.0
+
+[node name="WebPlatform2" parent="." instance=ExtResource("5_jw2ia")]
+position = Vector2(651, -3145)
+rotation = -0.603811
+scale = Vector2(2.725, 0.63)
