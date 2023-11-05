@@ -36,6 +36,7 @@ var is_jumping := false
 @onready var ray_cast_2d_3 = $BottomRays/RayCast2D3
 @onready var animation_player = $AnimationPlayer
 @onready var sprite = $Sprite
+@onready var steps_audio_player = $StepsAudioPlayer as RandomAudioStreamPlayer
 
 
 
@@ -187,3 +188,7 @@ func animate():
 		animation_player.play("walk")
 	if velocity.x == 0:
 		animation_player.play("idle")
+
+
+func play_step_sound():
+	steps_audio_player.play_random()
