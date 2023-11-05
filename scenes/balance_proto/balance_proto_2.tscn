@@ -15,7 +15,6 @@ position = Vector2(195, 412)
 [node name="BalancePlayer" parent="." instance=ExtResource("2_26kko")]
 position = Vector2(199, 517)
 scale = Vector2(2, 2)
-jump_force = 1200.0
 
 [node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
 scale = Vector2(0.5, 0.5)

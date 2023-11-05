@@ -1,13 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://df04pm6gl16en"]
+[gd_scene load_steps=18 format=3 uid="uid://df04pm6gl16en"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/balance_player/balance_player.gd" id="1_lpjci"]
 [ext_resource type="PackedScene" uid="uid://cxj01n3rwt06y" path="res://scenes/balance_proto/balance_board/balance_board.tscn" id="2_1nu8q"]
 [ext_resource type="Texture2D" uid="uid://w7x1tv34quf4" path="res://scenes/balance_proto/balance_player/sprites/idle_itch.png" id="3_jcsm7"]
 [ext_resource type="Texture2D" uid="uid://cwcy7mc2e6d50" path="res://scenes/balance_proto/balance_player/sprites/walk.png" id="3_wjcf5"]
 [ext_resource type="PackedScene" uid="uid://ba6iajnpkoore" path="res://scenes/random_audio_stream_player/random_audio_stream_player.tscn" id="5_0jrup"]
-[ext_resource type="AudioStream" uid="uid://6u1jqnxnrtn5" path="res://sounds/Step_1.wav" id="5_lyw42"]
-[ext_resource type="AudioStream" uid="uid://p6774ryxsuxa" path="res://sounds/Step_2.wav" id="7_svm26"]
-[ext_resource type="AudioStream" uid="uid://dtv2q4uqql1vl" path="res://sounds/Step_3.wav" id="8_u0dva"]
+[ext_resource type="AudioStream" uid="uid://b63f14hpyp1rh" path="res://sounds/steps/StepV2_1.wav" id="6_00h1i"]
+[ext_resource type="AudioStream" uid="uid://bjuqa7pxby2o3" path="res://sounds/steps/StepV2_2.wav" id="7_umasf"]
+[ext_resource type="AudioStream" uid="uid://dgsobs4k75hg0" path="res://sounds/steps/StepV2_3.wav" id="8_45nvk"]
+[ext_resource type="AudioStream" uid="uid://b15jsmpwmryok" path="res://sounds/steps/StepV2_4.wav" id="9_3y4qs"]
+[ext_resource type="AudioStream" uid="uid://cqp5kbc67f8hi" path="res://sounds/jump/Jump.wav" id="10_0xv5t"]
+[ext_resource type="AudioStream" uid="uid://6hvkgtyr6373" path="res://sounds/landing/Landing.wav" id="11_xp3kf"]
 
 [sub_resource type="Animation" id="Animation_3o8s8"]
 resource_name = "walk"
@@ -193,7 +196,7 @@ position = Vector2(0, -30)
 [node name="BottomRays" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="BottomRays"]
-position = Vector2(0, 12)
+position = Vector2(0, 14)
 target_position = Vector2(0, 5)
 collision_mask = 2
 
@@ -222,4 +225,10 @@ target_position = Vector2(0, 5)
 collision_mask = 2048
 
 [node name="StepsAudioPlayer" parent="." instance=ExtResource("5_0jrup")]
-audio_streams = Array[AudioStream]([ExtResource("5_lyw42"), ExtResource("7_svm26"), ExtResource("8_u0dva")])
+audio_streams = Array[AudioStream]([ExtResource("6_00h1i"), ExtResource("7_umasf"), ExtResource("8_45nvk"), ExtResource("9_3y4qs")])
+
+[node name="JumpAudioStreamPlayer" parent="." instance=ExtResource("5_0jrup")]
+audio_streams = Array[AudioStream]([ExtResource("10_0xv5t")])
+
+[node name="LandingAudioStreamPlayer" parent="." instance=ExtResource("5_0jrup")]
+audio_streams = Array[AudioStream]([ExtResource("11_xp3kf")])

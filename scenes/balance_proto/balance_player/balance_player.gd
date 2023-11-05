@@ -32,7 +32,10 @@ var x_dir := 1
 # ------------- #
 
 # JUMP VARAIABLES ------------------- #
-@export var jump_force : float = 1400
+var jump_force : float = 1400
+@export var default_jump_force : float = 1400
+@export var powerful_jump_force : float = 1400 * 3
+
 @export var jump_cut : float = 0.25
 @export var jump_gravity_max : float = 500
 @export var jump_hang_treshold : float = 2.0
@@ -44,6 +47,7 @@ var x_dir := 1
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
 var is_jumping := false
+var was_near_floor := false
 # ----------------------------------- #
 @onready var area_2d = $Area2D
 @onready var board_top_location = $BoardTopLocation
@@ -52,7 +56,11 @@ var is_jumping := false
 @onready var ray_cast_2d_3 = $BottomRays/RayCast2D3
 @onready var animation_player = $AnimationPlayer
 @onready var sprite = $Sprite
+# AUDIO ----------------------------- # ice ray casts
 @onready var steps_audio_player = $StepsAudioPlayer as RandomAudioStreamPlayer
+@onready var jump_audio_stream_player = $JumpAudioStreamPlayer as RandomAudioStreamPlayer
+@onready var landing_audio_stream_player = $LandingAudioStreamPlayer as RandomAudioStreamPlayer
+
 # ----------------------------------- # ice ray casts
 @onready var ice_ray_1 = $BottomRays/IceRays/IceRay1
 @onready var ice_ray_2 = $BottomRays/IceRays/IceRay2
@@ -103,6 +111,13 @@ func _physics_process(delta: float) -> void:
 	
 	timers(delta)
 	move_and_slide()
+	check_landing()
+
+
+func check_landing():
+	if !was_near_floor && is_near_floor():
+		landing_audio_stream_player.play_random()
+	was_near_floor = is_near_floor()
 
 
 func x_movement(delta: float) -> void:
@@ -150,6 +165,7 @@ func jump_logic(_delta: float) -> void:
 	# Jump if grounded, there is jump input, and we aren't jumping already
 	if jump_coyote_timer > 0 and jump_buffer_timer > 0 and not is_jumping:
 		is_jumping = true
+		jump_audio_stream_player.play_random()
 		jump_coyote_timer = 0
 		jump_buffer_timer = 0
 		# If falling, account for that lost speed
