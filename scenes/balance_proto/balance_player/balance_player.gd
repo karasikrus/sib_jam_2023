@@ -56,7 +56,7 @@ var was_near_floor := false
 @onready var ray_cast_2d_3 = $BottomRays/RayCast2D3
 @onready var animation_player = $AnimationPlayer
 @onready var sprite = $Sprite
-# AUDIO ----------------------------- # ice ray casts
+# AUDIO ----------------------------- # 
 @onready var steps_audio_player = $StepsAudioPlayer as RandomAudioStreamPlayer
 @onready var jump_audio_stream_player = $JumpAudioStreamPlayer as RandomAudioStreamPlayer
 @onready var landing_audio_stream_player = $LandingAudioStreamPlayer as RandomAudioStreamPlayer
@@ -64,6 +64,10 @@ var was_near_floor := false
 # ----------------------------------- # ice ray casts
 @onready var ice_ray_1 = $BottomRays/IceRays/IceRay1
 @onready var ice_ray_2 = $BottomRays/IceRays/IceRay2
+
+# ----------------------------------- # web ray casts
+@onready var web_ray_1 = $BottomRays/WebRays/WebRay1
+@onready var web_ray_2 = $BottomRays/WebRays/WebRay2
 
 
 
@@ -105,6 +109,7 @@ func get_input() -> Dictionary:
 
 func _physics_process(delta: float) -> void:
 	update_acceleration()
+	update_jump_force()
 	x_movement(delta)
 	jump_logic(delta)
 	apply_gravity(delta)
@@ -248,3 +253,10 @@ func update_acceleration():
 		acceleration = default_acceleration
 		deceleration = default_deceleration
 		turning_acceleration = default_turning_acceleration
+
+
+func update_jump_force():
+	if web_ray_1.is_colliding() or web_ray_2.is_colliding(): #on ice and on floor
+		jump_force = powerful_jump_force
+	else:
+		jump_force = default_jump_force

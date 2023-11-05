@@ -163,6 +163,8 @@ size = Vector2(38, 6)
 [node name="BalancePlayer" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_lpjci")
+default_jump_force = 1200.0
+powerful_jump_force = 1600.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -223,6 +225,20 @@ modulate = Color(0.87451, 0.694118, 0.694118, 1)
 position = Vector2(5, 13)
 target_position = Vector2(0, 5)
 collision_mask = 2048
+
+[node name="WebRays" type="Node2D" parent="BottomRays"]
+
+[node name="WebRay1" type="RayCast2D" parent="BottomRays/WebRays"]
+modulate = Color(0.87451, 0.694118, 0.694118, 1)
+position = Vector2(-5, 13)
+target_position = Vector2(0, 5)
+collision_mask = 4096
+
+[node name="WebRay2" type="RayCast2D" parent="BottomRays/WebRays"]
+modulate = Color(0.87451, 0.694118, 0.694118, 1)
+position = Vector2(5, 13)
+target_position = Vector2(0, 5)
+collision_mask = 4096
 
 [node name="StepsAudioPlayer" parent="." instance=ExtResource("5_0jrup")]
 audio_streams = Array[AudioStream]([ExtResource("6_00h1i"), ExtResource("7_umasf"), ExtResource("8_45nvk"), ExtResource("9_3y4qs")])

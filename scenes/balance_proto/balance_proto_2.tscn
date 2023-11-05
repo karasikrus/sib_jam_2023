@@ -44,9 +44,11 @@ position = Vector2(389, -134)
 scale = Vector2(1.80661, 0.626969)
 
 [node name="Platform20" parent="Platforms" instance=ExtResource("1_febpg")]
+modulate = Color(0.803922, 0.258824, 0.258824, 1)
 position = Vector2(1046, -407)
 rotation = 0.000296414
 scale = Vector2(2.58523, 1.53414)
+collision_layer = 4098
 physics_material_override = SubResource("PhysicsMaterial_nvdfq")
 
 [node name="Platform17" parent="Platforms" instance=ExtResource("1_febpg")]
@@ -55,8 +57,8 @@ scale = Vector2(1.80661, 0.626969)
 
 [node name="Platform26" parent="Platforms" instance=ExtResource("1_febpg")]
 modulate = Color(0.466667, 0.45098, 1, 1)
-position = Vector2(795, -540)
-scale = Vector2(1.80661, 0.626969)
+position = Vector2(770, -540)
+scale = Vector2(2.28661, 0.626969)
 collision_layer = 2050
 
 [node name="Platform27" parent="Platforms" instance=ExtResource("1_febpg")]
