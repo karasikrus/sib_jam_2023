@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crgm04b4as6mr"]
+
+[ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="1_1a1ka"]
+
+[node name="IcePlatform" instance=ExtResource("1_1a1ka")]
+modulate = Color(0.466667, 0.45098, 1, 1)
+collision_layer = 2050
