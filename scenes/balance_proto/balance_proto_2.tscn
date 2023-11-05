@@ -31,8 +31,10 @@ drag_bottom_margin = 0.3
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("1_febpg")]
+modulate = Color(0.466667, 0.45098, 1, 1)
 position = Vector2(623, 595)
 scale = Vector2(23.6012, 1.16024)
+collision_layer = 2050
 
 [node name="Platform9" parent="Platforms" instance=ExtResource("1_febpg")]
 position = Vector2(585, -2922)
@@ -53,8 +55,10 @@ position = Vector2(115, -246)
 scale = Vector2(1.80661, 0.626969)
 
 [node name="Platform26" parent="Platforms" instance=ExtResource("1_febpg")]
+modulate = Color(0.466667, 0.45098, 1, 1)
 position = Vector2(795, -540)
 scale = Vector2(1.80661, 0.626969)
+collision_layer = 2050
 
 [node name="Platform27" parent="Platforms" instance=ExtResource("1_febpg")]
 position = Vector2(532, -654)
@@ -152,8 +156,10 @@ position = Vector2(686, 227)
 scale = Vector2(4.80661, 0.626969)
 
 [node name="Platform21" parent="Platforms" instance=ExtResource("1_febpg")]
+modulate = Color(0.466667, 0.45098, 1, 1)
 position = Vector2(473, -355)
 scale = Vector2(3.44661, 0.626969)
+collision_layer = 2050
 
 [node name="Platform54" parent="Platforms" instance=ExtResource("1_febpg")]
 position = Vector2(1084, -2137)
@@ -187,13 +193,17 @@ rotation = 3.14159
 scale = Vector2(2.807, -100)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("1_febpg")]
+modulate = Color(0.466667, 0.45098, 1, 1)
 position = Vector2(1061, 434)
 scale = Vector2(6.96661, 0.626969)
+collision_layer = 2050
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("1_febpg")]
+modulate = Color(0.466667, 0.45098, 1, 1)
 position = Vector2(625, 517)
 rotation = -0.361735
 scale = Vector2(7.43028, 0.626969)
+collision_layer = 2050
 
 [node name="Platform18" parent="Platforms" instance=ExtResource("1_febpg")]
 position = Vector2(499, -158)

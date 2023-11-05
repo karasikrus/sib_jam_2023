@@ -194,18 +194,32 @@ position = Vector2(0, -30)
 
 [node name="RayCast2D" type="RayCast2D" parent="BottomRays"]
 position = Vector2(0, 12)
-target_position = Vector2(0, 7)
+target_position = Vector2(0, 5)
 collision_mask = 2
 
 [node name="RayCast2D2" type="RayCast2D" parent="BottomRays"]
-position = Vector2(-19, 12)
-target_position = Vector2(0, 7)
+position = Vector2(-7, 12)
+target_position = Vector2(0, 15)
 collision_mask = 2
 
 [node name="RayCast2D3" type="RayCast2D" parent="BottomRays"]
-position = Vector2(19, 12)
-target_position = Vector2(0, 7)
+position = Vector2(7, 12)
+target_position = Vector2(0, 15)
 collision_mask = 2
+
+[node name="IceRays" type="Node2D" parent="BottomRays"]
+
+[node name="IceRay1" type="RayCast2D" parent="BottomRays/IceRays"]
+modulate = Color(0.87451, 0.694118, 0.694118, 1)
+position = Vector2(-5, 13)
+target_position = Vector2(0, 5)
+collision_mask = 2048
+
+[node name="IceRay2" type="RayCast2D" parent="BottomRays/IceRays"]
+modulate = Color(0.87451, 0.694118, 0.694118, 1)
+position = Vector2(5, 13)
+target_position = Vector2(0, 5)
+collision_mask = 2048
 
 [node name="StepsAudioPlayer" parent="." instance=ExtResource("5_0jrup")]
 audio_streams = Array[AudioStream]([ExtResource("5_lyw42"), ExtResource("7_svm26"), ExtResource("8_u0dva")])

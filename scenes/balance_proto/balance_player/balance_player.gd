@@ -8,6 +8,22 @@ var x_dir := 1
 @export var acceleration: float = 2880
 @export var turning_acceleration : float = 9600
 @export var deceleration: float = 3200
+
+@export_category("default acceleraion")
+@export var default_acceleration: float = 2880
+@export var default_turning_acceleration : float = 9600
+@export var default_deceleration: float = 3200
+
+@export_category("ice acceleraion")
+@export var ice_acceleration: float = 2880/8
+@export var ice_turning_acceleration : float = 9600/8
+@export var ice_deceleration: float = 3200/8
+
+@export_category("air acceleraion")
+@export var air_acceleration: float = 2880
+@export var air_turning_acceleration : float = 9600
+@export var air_deceleration: float = 1000
+@export_category("")
 # ------------------------------------------ #
 
 # GRAVITY ----- #
@@ -22,7 +38,7 @@ var x_dir := 1
 @export var jump_hang_treshold : float = 2.0
 @export var jump_hang_gravity_mult : float = 0.1
 # Timers
-@export var jump_coyote : float = 0.08
+@export var jump_coyote : float = 0.3
 @export var jump_buffer : float = 0.1
 
 var jump_coyote_timer : float = 0
@@ -37,6 +53,10 @@ var is_jumping := false
 @onready var animation_player = $AnimationPlayer
 @onready var sprite = $Sprite
 @onready var steps_audio_player = $StepsAudioPlayer as RandomAudioStreamPlayer
+# ----------------------------------- # ice ray casts
+@onready var ice_ray_1 = $BottomRays/IceRays/IceRay1
+@onready var ice_ray_2 = $BottomRays/IceRays/IceRay2
+
 
 
 
@@ -49,14 +69,18 @@ func _process(delta):
 
 
 func on_body_near_legs(body: Node2D):
-	if body is BabyMouse and is_near_floor():
+	if body is BabyMouse and is_pickup_near_floor():
 		(body as BabyMouse).teleport(board_top_location.global_position)
 
 
 func is_near_floor():
-	return ray_cast_2d.collide_with_bodies or\
-	ray_cast_2d_2.collide_with_bodies or\
-	ray_cast_2d_3.collide_with_bodies
+	return ray_cast_2d.is_colliding()
+
+
+func is_pickup_near_floor():
+	return ray_cast_2d.is_colliding() or\
+	ray_cast_2d_2.is_colliding() or\
+	ray_cast_2d_3.is_colliding()
 	
 	
 	
@@ -72,6 +96,7 @@ func get_input() -> Dictionary:
 
 
 func _physics_process(delta: float) -> void:
+	update_acceleration()
 	x_movement(delta)
 	jump_logic(delta)
 	apply_gravity(delta)
@@ -192,3 +217,18 @@ func animate():
 
 func play_step_sound():
 	steps_audio_player.play_random()
+
+
+func update_acceleration():
+	if !is_near_floor():
+		acceleration = air_acceleration
+		deceleration = air_deceleration
+		turning_acceleration = air_turning_acceleration
+	elif ice_ray_1.is_colliding() or ice_ray_2.is_colliding(): #on ice and on floor
+		acceleration = ice_acceleration
+		deceleration = ice_deceleration
+		turning_acceleration = ice_turning_acceleration
+	else:
+		acceleration = default_acceleration
+		deceleration = default_deceleration
+		turning_acceleration = default_turning_acceleration
