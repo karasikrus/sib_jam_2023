@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtasxfrljyj2w"]
+[gd_scene load_steps=11 format=3 uid="uid://dtasxfrljyj2w"]
 
 [ext_resource type="AudioStream" uid="uid://dvoiyerj7th5y" path="res://music/4.mp3" id="1_6kybt"]
 [ext_resource type="Script" path="res://cutscenes/intro.gd" id="1_uu2ok"]
+[ext_resource type="Texture2D" uid="uid://liqyp626jngo" path="res://cutscenes/интро1.png" id="2_tqr5u"]
+[ext_resource type="Texture2D" uid="uid://cp22mkoijyl3r" path="res://cutscenes/интро3.png" id="3_snab5"]
+[ext_resource type="Texture2D" uid="uid://4fbwlp0u54w0" path="res://cutscenes/интро2.png" id="4_nvctm"]
 
 [sub_resource type="Gradient" id="Gradient_gifp7"]
 
@@ -18,10 +21,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [SubResource("GradientTexture1D_180py")]
+"values": [ExtResource("2_tqr5u"), ExtResource("3_snab5"), ExtResource("4_nvctm")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false

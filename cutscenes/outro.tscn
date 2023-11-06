@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cycn2we762hsu"]
+[gd_scene load_steps=11 format=3 uid="uid://cycn2we762hsu"]
 
 [ext_resource type="Script" path="res://cutscenes/intro.gd" id="1_3gxdi"]
+[ext_resource type="Texture2D" uid="uid://cgyrhniiufige" path="res://cutscenes/финал.jpg" id="2_2oiid"]
 [ext_resource type="AudioStream" uid="uid://coyfiyk0x0clw" path="res://music/5.mp3" id="2_a0ewq"]
 
 [sub_resource type="Gradient" id="Gradient_gifp7"]
@@ -22,6 +23,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [SubResource("GradientTexture1D_180py")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.541176)]
+}
 
 [sub_resource type="Animation" id="Animation_fbm0i"]
 resource_name = "default"
@@ -36,7 +49,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("GradientTexture1D_180py")]
+"values": [ExtResource("2_2oiid")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -52,12 +65,32 @@ tracks/1/keys = {
 "method": &"on_end"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.1, 6.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.541176)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1bxj"]
 _data = {
 "RESET": SubResource("Animation_r6nti"),
 "default": SubResource("Animation_fbm0i")
 }
+
+[sub_resource type="Gradient" id="Gradient_3lbo6"]
+colors = PackedColorArray(0.16153, 0, 0.261719, 1, 0.22644, 0, 0.414063, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ll0p0"]
+gradient = SubResource("Gradient_3lbo6")
+fill_from = Vector2(0.521368, 0.696581)
+fill_to = Vector2(0.611111, 0)
 
 [node name="Outro" type="TextureRect"]
 anchors_preset = 15
@@ -79,3 +112,32 @@ libraries = {
 stream = ExtResource("2_a0ewq")
 autoplay = true
 bus = &"music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.541176)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -348.0
+offset_top = -235.0
+offset_right = 315.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_ll0p0")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 130
+text = "Спасибо
+"
+horizontal_alignment = 1
+vertical_alignment = 1
