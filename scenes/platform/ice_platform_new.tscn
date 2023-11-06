@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c65avfflhdbvu"]
+
+[ext_resource type="Texture2D" uid="uid://iblqe1gn2fcp" path="res://scenes/platform/sprites/ice.png" id="1_hkeji"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_650nd"]
+friction = 0.01
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6e65"]
+size = Vector2(831, 169)
+
+[node name="ice_platform_new" type="StaticBody2D" groups=["dirt"]]
+collision_layer = 2050
+collision_mask = 257
+physics_material_override = SubResource("PhysicsMaterial_650nd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hkeji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_l6e65")
