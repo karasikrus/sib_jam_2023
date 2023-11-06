@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://ddiap6t2k04xi"]
 
-[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_cl0ps"]
+[ext_resource type="AudioStream" uid="uid://dapgesvrdbvx2" path="res://monologues/sounds/Replic_TalkAboutLive_1.wav" id="1_l55lg"]
 [ext_resource type="Script" path="res://monologues/monologue.gd" id="2_cubd7"]
 
 [resource]
 script = ExtResource("2_cubd7")
 phrase_texts = Array[String](["Жил себе, никого не трогал. Свалилось же на голову эта мышь несчастная. Надеюсь, мама-мышь меня хотя бы поблагодарит. Это же мне пришлось по всем тоннелям шляться, чтобы её ребенка вернуть. В следующий раз пусть сама справляется, а у меня и так дел полно…"])
 phrase_times = Array[float]([])
-phrase_audio = ExtResource("1_cl0ps")
+phrase_audio = ExtResource("1_l55lg")

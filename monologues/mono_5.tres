@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://286hsx4qftqf"]
 
-[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_mgp2a"]
+[ext_resource type="AudioStream" uid="uid://desjo8yv10p0w" path="res://monologues/sounds/Replic_WebZone_1.wav" id="1_gsfyk"]
 [ext_resource type="Script" path="res://monologues/monologue.gd" id="2_wheyy"]
 
 [resource]
 script = ExtResource("2_wheyy")
 phrase_texts = Array[String](["Паутина? Такая огромная? Я что-то пропустил, и теперь тут завелись огромные пауки??…Стоп, это же я ее повесил, чтобы прыгать выше."])
 phrase_times = Array[float]([])
-phrase_audio = ExtResource("1_mgp2a")
+phrase_audio = ExtResource("1_gsfyk")

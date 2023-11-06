@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://da6w73nifacuc"]
 
-[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_4tvqu"]
+[ext_resource type="AudioStream" uid="uid://dkw0i7ccbo531" path="res://monologues/sounds/Replic_TalkAboutLive_3.wav" id="1_vpo6b"]
 [ext_resource type="Script" path="res://monologues/monologue.gd" id="2_2gjs7"]
 
 [resource]
 script = ExtResource("2_2gjs7")
 phrase_texts = Array[String](["Я тут подумал: если я крот, то почему я не слепой? Обычно кроты слепые. Не все, конечно, но многие. О, а вдруг я один из тех самых избранных кротов, которые могут стрелять лазерами из глаз? Но такого, к сожалению, не будет."])
 phrase_times = Array[float]([])
-phrase_audio = ExtResource("1_4tvqu")
+phrase_audio = ExtResource("1_vpo6b")
