@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmk5ky2xr4pgp"]
+
+[ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="1_6argf"]
+[ext_resource type="Texture2D" uid="uid://iblqe1gn2fcp" path="res://scenes/platform/sprites/ice.png" id="2_sqf42"]
+
+[node name="IcePlatform" groups=["dirt"] instance=ExtResource("1_6argf")]
+collision_layer = 2050
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_sqf42")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(4, 2.5)
