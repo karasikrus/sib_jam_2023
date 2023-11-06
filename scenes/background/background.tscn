@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5ke867pwmuan"]
+
+[ext_resource type="Texture2D" uid="uid://d0uu7caf3g7cd" path="res://scenes/background/zone 1-1.png" id="1_rtvpq"]
+
+[node name="Background" type="TextureRect"]
+z_index = -10
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("1_rtvpq")
+expand_mode = 2
+stretch_mode = 4

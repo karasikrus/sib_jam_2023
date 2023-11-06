@@ -21,6 +21,7 @@ func _ready():
 	alone_timer.timeout.connect(on_alone_timer_end)
 
 
+
 func _process(delta):
 	update_animations()
 
