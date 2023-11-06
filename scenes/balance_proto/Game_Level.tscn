@@ -320,11 +320,6 @@ scale = Vector2(4.84661, 0.626969)
 position = Vector2(2065, 444)
 scale = Vector2(6.80661, 0.626969)
 
-[node name="Platform72" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(879, 518)
-rotation = -0.47587
-scale = Vector2(6.80661, 0.626969)
-
 [node name="Platform7" parent="Platforms" instance=ExtResource("3_ehvyx")]
 modulate = Color(0.141176, 0.129412, 0.145098, 1)
 z_index = 10
@@ -470,20 +465,20 @@ rotation = 0.0719585
 scale = Vector2(0.215, 0.25)
 
 [node name="Platform51" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(300, -1477)
+position = Vector2(300, -1487)
 scale = Vector2(0.265, 0.25)
 
 [node name="Platform59" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(135, -1624)
+position = Vector2(135, -1638)
 scale = Vector2(0.325, 0.25)
 
 [node name="Platform73" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(410, -1638)
+position = Vector2(410, -1647)
 rotation = 1.5708
 scale = Vector2(0.325, 0.25)
 
 [node name="Platform109" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(380, -1520)
+position = Vector2(380, -1530)
 rotation = 2.1348
 scale = Vector2(0.265, 0.25)
 
@@ -709,17 +704,17 @@ scale = Vector2(1, 0.991802)
 color = Color(0.529412, 0.529412, 0.529412, 1)
 
 [node name="BabyMouse" parent="." instance=ExtResource("1_j57vw")]
-position = Vector2(286, 447)
+position = Vector2(215, 467)
 
 [node name="PointLight2D" type="PointLight2D" parent="BabyMouse"]
 scale = Vector2(1, 0.999559)
-color = Color(0.458824, 0.823529, 0.654902, 1)
-energy = 0.98
+color = Color(1, 1, 1, 0.427451)
+energy = 0.6
 texture = SubResource("GradientTexture2D_7lkxu")
 texture_scale = 8.15
 
 [node name="BalancePlayer" parent="." instance=ExtResource("2_gu3pf")]
-position = Vector2(253, -2834)
+position = Vector2(214, 572)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
@@ -735,8 +730,8 @@ drag_bottom_margin = 0.3
 
 [node name="PointLight2D" type="PointLight2D" parent="BalancePlayer"]
 scale = Vector2(1, 0.999559)
-color = Color(0.458824, 0.823529, 0.654902, 1)
-energy = 2.0
+color = Color(1, 1, 1, 0.45098)
+energy = 0.8
 texture = SubResource("GradientTexture2D_7lkxu")
 texture_scale = 6.96
 

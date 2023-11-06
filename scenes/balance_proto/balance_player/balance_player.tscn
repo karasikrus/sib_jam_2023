@@ -332,6 +332,7 @@ volume_db = 20.0
 audio_streams = Array[AudioStream]([ExtResource("6_00h1i"), ExtResource("7_umasf"), ExtResource("8_45nvk"), ExtResource("9_3y4qs")])
 
 [node name="JumpAudioStreamPlayer" parent="." instance=ExtResource("5_0jrup")]
+volume_db = 2.0
 audio_streams = Array[AudioStream]([ExtResource("10_0xv5t")])
 
 [node name="LandingAudioStreamPlayer" parent="." instance=ExtResource("5_0jrup")]
