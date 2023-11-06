@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6otlsimcn4nr"]
+[gd_scene load_steps=11 format=3 uid="uid://b6otlsimcn4nr"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/baby_mouse/baby_mouse.gd" id="1_727ms"]
 [ext_resource type="Texture2D" uid="uid://cwg5gps5wp1gs" path="res://scenes/balance_proto/baby_mouse/мыш.png" id="2_k0n5n"]
@@ -6,6 +6,74 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_px6gg"]
 rough = true
+
+[sub_resource type="Animation" id="Animation_sdtxi"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.960784, 0.466667, 0.466667, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5uc4p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yeuiq"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v4f1a"]
+resource_name = "crying"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.109804, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgtyr"]
+_data = {
+"RESET": SubResource("Animation_5uc4p"),
+"crying": SubResource("Animation_v4f1a"),
+"default": SubResource("Animation_yeuiq"),
+"hit": SubResource("Animation_sdtxi")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r63jk"]
 custom_solver_bias = 0.95
@@ -23,6 +91,18 @@ contact_monitor = true
 can_sleep = false
 linear_damp = 1.0
 script = ExtResource("1_727ms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mgtyr")
+}
+
+[node name="HitTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AloneTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.702698, -1.7027)

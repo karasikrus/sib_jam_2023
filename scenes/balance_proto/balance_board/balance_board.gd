@@ -73,6 +73,7 @@ func on_body_entered_magnetic_field(body):
 	if body is BabyMouse:
 		baby_mouse = (body as BabyMouse)
 		baby_mouse.inertia = close_baby_mouse_inertia
+		baby_mouse.make_not_alone()
 	if !is_magnetic_field_active:
 		return
 		
@@ -83,6 +84,7 @@ func on_body_exited_magnetic_field(body):
 	if body is BabyMouse:
 		baby_mouse = (body as BabyMouse)
 		baby_mouse.inertia = standard_baby_mouse_inertia
+		baby_mouse.make_alone()
 	if !is_magnetic_field_active:
 		return
 	is_applying_magnetic_force = false
