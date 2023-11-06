@@ -133,7 +133,7 @@ fill_to = Vector2(0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_avi8e"]
 shader = ExtResource("2_qn1yy")
 shader_parameter/transition_color = Color(0.0980392, 0, 0.0666667, 1)
-shader_parameter/percent = 1.0
+shader_parameter/percent = 0.0
 shader_parameter/transition_texture = SubResource("GradientTexture2D_a0pt1")
 
 [node name="SceneTransition" type="CanvasLayer"]

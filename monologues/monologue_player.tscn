@@ -20,7 +20,6 @@ fill_from = Vector2(0.521368, 0.696581)
 fill_to = Vector2(0.611111, 0)
 
 [node name="MonologuePlayer" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_qj24p")
 monologues = Array[Resource("res://monologues/monologue.gd")]([ExtResource("2_w6c15"), ExtResource("3_ocnw5"), ExtResource("4_x7doh"), ExtResource("5_m7im6"), ExtResource("6_nwaxy"), ExtResource("7_j604t"), ExtResource("8_lhqvm"), ExtResource("9_36r8t"), ExtResource("10_6ctkk")])
 
@@ -33,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -668.0
-offset_top = -367.0
-offset_right = 797.0
-offset_bottom = -113.0
+offset_left = -758.0
+offset_top = -304.0
+offset_right = 707.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -51,14 +50,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = 40.0
-offset_right = -32.0
-offset_bottom = -79.0
+offset_left = 23.0
+offset_top = 27.0
+offset_right = -29.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Да куда ж ты катишься опять! Остановись уже, иначе я сам тебя поймаю, а потом в землю посажу, как редиску, пока не вырастешь и сам своими ногами не пойдешь. Интересно, а с мышами вообще такой способ сработает?"
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="BoringTimer" type="Timer" parent="."]

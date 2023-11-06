@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://46vyvn233cqi"]
+[gd_scene load_steps=33 format=3 uid="uid://46vyvn233cqi"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/Game_Level.gd" id="1_8v8ak"]
 [ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="1_j57vw"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://biy48nep82ejo" path="res://scenes/platform/web_platform_new.tscn" id="18_5co4s"]
 [ext_resource type="PackedScene" uid="uid://c65avfflhdbvu" path="res://scenes/platform/ice_platform_new.tscn" id="18_cxuy7"]
 [ext_resource type="PackedScene" uid="uid://dusrn3fvqmo5p" path="res://scenes/dialogue_trigger/dialogue_trigger.tscn" id="27_1atbm"]
+[ext_resource type="AudioStream" uid="uid://c1v5vus87vu45" path="res://music/3.mp3" id="28_uia5j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvdfq"]
 bounce = 1.0
@@ -704,12 +705,18 @@ color = Color(0.141176, 0.129412, 0.145098, 1)
 polygon = PackedVector2Array(318, -3772, 316, -4034, 816, -4006, 814, -3954, 732, -3940, 618, -3904, 516, -3850, 416, -3786, 358, -3740)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 scale = Vector2(1, 0.991802)
-color = Color(0.266667, 0.266667, 0.266667, 1)
+color = Color(0.529412, 0.529412, 0.529412, 1)
 
 [node name="BabyMouse" parent="." instance=ExtResource("1_j57vw")]
 position = Vector2(286, 447)
+
+[node name="PointLight2D" type="PointLight2D" parent="BabyMouse"]
+scale = Vector2(1, 0.999559)
+color = Color(0.458824, 0.823529, 0.654902, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_7lkxu")
+texture_scale = 1.4
 
 [node name="BalancePlayer" parent="." instance=ExtResource("2_gu3pf")]
 position = Vector2(253, -2834)
@@ -727,7 +734,6 @@ drag_vertical_enabled = true
 drag_bottom_margin = 0.3
 
 [node name="PointLight2D" type="PointLight2D" parent="BalancePlayer"]
-visible = false
 scale = Vector2(1, 0.999559)
 color = Color(0.458824, 0.823529, 0.654902, 1)
 energy = 2.0
@@ -843,3 +849,7 @@ position = Vector2(354, -2876)
 rotation = 1.57571
 scale = Vector2(12.17, 2.28)
 monologue_id = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_uia5j")
+autoplay = true
