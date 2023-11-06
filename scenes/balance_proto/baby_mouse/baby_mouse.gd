@@ -9,6 +9,11 @@ var teleport_location: Vector2 = Vector2.ZERO
 @export var ice_friction = 0.001
 
 @onready var ray_cast_2d = $RayCast2D
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
+
+
+func _ready():
+	body_entered.connect(on_collision)
 
 
 func _physics_process(delta):
@@ -34,3 +39,8 @@ func _integrate_forces(state):
 func teleport(location: Vector2):
 	teleport_location = location
 	is_teleporting = true
+
+
+func on_collision(body:Node):
+	if body.is_in_group("dirt"):
+		audio_stream_player_2d.play()

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhov5wwpgirww"]
+
+[ext_resource type="Texture2D" uid="uid://cmevaq7ldlsde" path="res://scenes/platform/sprites/блоки.png" id="1_iign0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ald4"]
+size = Vector2(471, 164)
+
+[node name="Platform" type="StaticBody2D" groups=["dirt"]]
+scale = Vector2(0.25, 0.25)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iign0")
+region_enabled = true
+region_rect = Rect2(2612.13, 1364.08, 488.746, 183.923)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_2ald4")
