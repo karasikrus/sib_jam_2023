@@ -314,14 +314,14 @@ pitch_scale = 2.53
 bus = &"sfx"
 
 [node name="RandomCryPlayer2D" parent="." instance=ExtResource("4_r0i6y")]
-volume_db = -5.0
+volume_db = 15.0
 max_distance = 1000.0
 attenuation = 3.4822
 bus = &"sfx"
 streams = Array[AudioStream]([ExtResource("7_uh3p7")])
 
 [node name="RandomLaughPlayer2D" parent="." instance=ExtResource("4_r0i6y")]
-volume_db = -5.0
+volume_db = 17.0
 max_distance = 1000.0
 attenuation = 3.4822
 bus = &"sfx"

@@ -661,8 +661,8 @@ rotation = -0.425288
 scale = Vector2(0.377317, 0.25)
 
 [node name="Platform36" parent="Platforms" instance=ExtResource("17_eknt7")]
-position = Vector2(441, -355)
-scale = Vector2(0.205, 0.25)
+position = Vector2(449, -355)
+scale = Vector2(0.19, 0.25)
 
 [node name="Polygons" type="Node2D" parent="."]
 
@@ -848,6 +848,7 @@ monologue_id = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_uia5j")
+volume_db = -3.0
 autoplay = true
 
 [node name="Finish" parent="." instance=ExtResource("29_yadyu")]
