@@ -714,9 +714,9 @@ position = Vector2(286, 447)
 [node name="PointLight2D" type="PointLight2D" parent="BabyMouse"]
 scale = Vector2(1, 0.999559)
 color = Color(0.458824, 0.823529, 0.654902, 1)
-energy = 2.0
+energy = 0.98
 texture = SubResource("GradientTexture2D_7lkxu")
-texture_scale = 1.4
+texture_scale = 8.15
 
 [node name="BalancePlayer" parent="." instance=ExtResource("2_gu3pf")]
 position = Vector2(253, -2834)

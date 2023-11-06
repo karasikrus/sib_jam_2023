@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://cycn2we762hsu"]
+
+[ext_resource type="Script" path="res://cutscenes/intro.gd" id="1_3gxdi"]
+[ext_resource type="AudioStream" uid="uid://coyfiyk0x0clw" path="res://music/5.mp3" id="2_a0ewq"]
+
+[sub_resource type="Gradient" id="Gradient_gifp7"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_180py"]
+gradient = SubResource("Gradient_gifp7")
+
+[sub_resource type="Animation" id="Animation_r6nti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("GradientTexture1D_180py")]
+}
+
+[sub_resource type="Animation" id="Animation_fbm0i"]
+resource_name = "default"
+length = 13.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("GradientTexture1D_180py")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_end"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a1bxj"]
+_data = {
+"RESET": SubResource("Animation_r6nti"),
+"default": SubResource("Animation_fbm0i")
+}
+
+[node name="Outro" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_180py")
+script = ExtResource("1_3gxdi")
+path_to_next_scene = "res://scenes/menu/main_menu.tscn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_a1bxj")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a0ewq")
+autoplay = true
+bus = &"music"
