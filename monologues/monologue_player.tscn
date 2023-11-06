@@ -1,41 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw24dd5kxss8w"]
+[gd_scene load_steps=5 format=3 uid="uid://bw24dd5kxss8w"]
 
 [ext_resource type="Script" path="res://monologues/monologue_player.gd" id="1_qj24p"]
+[ext_resource type="Resource" uid="uid://ro5nyop474yy" path="res://monologues/mono_test.tres" id="2_m6eor"]
 
 [sub_resource type="Gradient" id="Gradient_3lbo6"]
-colors = PackedColorArray(0.257813, 0.257813, 0.257813, 1, 0.429688, 0.429688, 0.429688, 1)
+colors = PackedColorArray(0.16153, 0, 0.261719, 1, 0.22644, 0, 0.414063, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ll0p0"]
 gradient = SubResource("Gradient_3lbo6")
+fill_from = Vector2(0.521368, 0.696581)
+fill_to = Vector2(0.611111, 0)
 
 [node name="MonologuePlayer" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_qj24p")
+monologues = Array[Resource("res://monologues/monologue.gd")]([ExtResource("2_m6eor")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -731.0
-offset_top = -313.0
-offset_right = 850.0
-offset_bottom = -72.0
+offset_left = -668.0
+offset_top = -367.0
+offset_right = 797.0
+offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.396078)
+layout_mode = 2
 texture = SubResource("GradientTexture2D_ll0p0")
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="MarginContainer/TextureRect"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 23.0
-offset_right = -30.0
-offset_bottom = -96.0
+offset_left = 28.0
+offset_top = 40.0
+offset_right = -32.0
+offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25

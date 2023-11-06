@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://ro5nyop474yy"]
+
+[ext_resource type="Script" path="res://monologues/monologue.gd" id="1_o8e73"]
+[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_yewat"]
+
+[resource]
+script = ExtResource("1_o8e73")
+phrase_texts = Array[String](["skfhlksdfjlksdjflksdjflksdjflksdj klsdjflksdjflksjdf kdsjflksjdlkfjs klsdjflksjkd"])
+phrase_times = Array[float]([])
+phrase_audio = ExtResource("1_yewat")

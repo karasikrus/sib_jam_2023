@@ -91,3 +91,12 @@ func make_not_alone():
 
 func on_alone_timer_end():
 	is_alone = true
+	play_next_fall_monologue()
+
+var monologues_played : int = 0
+func play_next_fall_monologue():
+	if monologues_played < 4:
+		var success = MonologuePlayer.play_monologue(monologues_played)
+		if success:
+			monologues_played+=1
+		

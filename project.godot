@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneTransition="*res://scenes/autoload/scene_transition.tscn"
+MonologuePlayer="*res://monologues/monologue_player.tscn"
 
 [display]
 
