@@ -291,7 +291,7 @@ libraries = {
 one_shot = true
 
 [node name="AloneTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -309,21 +309,19 @@ collision_mask = 2048
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_s3q32")
-volume_db = 13.758
+volume_db = 11.56
 pitch_scale = 2.53
 bus = &"sfx"
 
 [node name="RandomCryPlayer2D" parent="." instance=ExtResource("4_r0i6y")]
-stream = ExtResource("7_uh3p7")
-volume_db = 17.0
+volume_db = -5.0
 max_distance = 1000.0
 attenuation = 3.4822
 bus = &"sfx"
 streams = Array[AudioStream]([ExtResource("7_uh3p7")])
 
 [node name="RandomLaughPlayer2D" parent="." instance=ExtResource("4_r0i6y")]
-stream = ExtResource("8_fcf4y")
-volume_db = 15.0
+volume_db = -5.0
 max_distance = 1000.0
 attenuation = 3.4822
 bus = &"sfx"

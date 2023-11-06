@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5qc5nlc5sn4h"]
+
+[ext_resource type="Script" path="res://scenes/finish/finish.gd" id="1_7g3v4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23gjy"]
+
+[node name="Finish" type="Area2D"]
+collision_layer = 32768
+collision_mask = 256
+script = ExtResource("1_7g3v4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_23gjy")

@@ -20,6 +20,7 @@ fill_from = Vector2(0.521368, 0.696581)
 fill_to = Vector2(0.611111, 0)
 
 [node name="MonologuePlayer" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_qj24p")
 monologues = Array[Resource("res://monologues/monologue.gd")]([ExtResource("2_w6c15"), ExtResource("3_ocnw5"), ExtResource("4_x7doh"), ExtResource("5_m7im6"), ExtResource("6_nwaxy"), ExtResource("7_j604t"), ExtResource("8_lhqvm"), ExtResource("9_36r8t"), ExtResource("10_6ctkk")])
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://46vyvn233cqi"]
+[gd_scene load_steps=34 format=3 uid="uid://46vyvn233cqi"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/Game_Level.gd" id="1_8v8ak"]
 [ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="1_j57vw"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c65avfflhdbvu" path="res://scenes/platform/ice_platform_new.tscn" id="18_cxuy7"]
 [ext_resource type="PackedScene" uid="uid://dusrn3fvqmo5p" path="res://scenes/dialogue_trigger/dialogue_trigger.tscn" id="27_1atbm"]
 [ext_resource type="AudioStream" uid="uid://c1v5vus87vu45" path="res://music/3.mp3" id="28_uia5j"]
+[ext_resource type="PackedScene" uid="uid://b5qc5nlc5sn4h" path="res://scenes/finish/finish.tscn" id="29_yadyu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvdfq"]
 bounce = 1.0
@@ -848,3 +849,7 @@ monologue_id = 5
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_uia5j")
 autoplay = true
+
+[node name="Finish" parent="." instance=ExtResource("29_yadyu")]
+position = Vector2(926, -5213)
+scale = Vector2(10.9956, 7.65246)
