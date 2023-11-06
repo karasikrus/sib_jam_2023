@@ -228,12 +228,18 @@ func animate():
 		sprite.scale.x = -abs(sprite.scale.x)
 	elif x_dir < 0:
 		sprite.scale.x = abs(sprite.scale.x)
-	if velocity.x > 0:		
-		animation_player.play("walk")
-	if velocity.x < 0:		
-		animation_player.play("walk")
-	if velocity.x == 0:
-		animation_player.play("idle")
+	if is_near_floor() && !is_jumping:
+		if velocity.x > 0:		
+			animation_player.play("walk")
+		elif velocity.x < 0:		
+			animation_player.play("walk")
+		elif velocity.x == 0:
+			animation_player.play("idle")
+	else:
+		if velocity.y > 0:
+			animation_player.play("fall")
+		if velocity.y < 0:
+			animation_player.play("jump")
 
 
 func play_step_sound():

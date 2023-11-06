@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c1pro8exu4udi"]
+
+[ext_resource type="Script" path="res://monologues/monologue.gd" id="1_kto1r"]
+
+[resource]
+script = ExtResource("1_kto1r")
+phrase_texts = Array[String]([])
+phrase_times = Array[float]([])

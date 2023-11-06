@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxj01n3rwt06y"]
+[gd_scene load_steps=4 format=3 uid="uid://cxj01n3rwt06y"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/balance_board/balance_board.gd" id="1_2fj12"]
+[ext_resource type="Texture2D" uid="uid://cv5rvuh3cv1uu" path="res://scenes/balance_proto/balance_player/sprites/basket.png" id="2_onjgb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdys1"]
 radius = 12.0
@@ -13,8 +14,10 @@ script = ExtResource("1_2fj12")
 balance_tilt_force = 5.0
 balance_reset_force = 3.0
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-23, 0, -19, 13.2075, 19, 13.2075, 23, 0, 23, -10, 15, -5, 7, -2, 0, -2, -6, -2, -15, -5, -23, -10)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 5.96046e-08)
+scale = Vector2(0.0496575, 0.0496575)
+texture = ExtResource("2_onjgb")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-23, 0, -19, 13.2075, 19, 13.2075, 23, 0, 23, -10, 15, -5, 7, -2, 0, -2, -6, -2, -15, -5, -23, -10)
