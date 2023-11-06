@@ -13,6 +13,8 @@ var teleport_location: Vector2 = Vector2.ZERO
 @onready var animation_player = $AnimationPlayer
 @onready var hit_timer = $HitTimer
 @onready var alone_timer = $AloneTimer
+@onready var random_cry_player_2d = $RandomCryPlayer2D
+@onready var random_laugh_player_2d = $RandomLaughPlayer2D
 
 var is_alone := false
 
