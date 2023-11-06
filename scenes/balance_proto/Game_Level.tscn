@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://46vyvn233cqi"]
+[gd_scene load_steps=11 format=3 uid="uid://46vyvn233cqi"]
 
 [ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="1_j57vw"]
 [ext_resource type="PackedScene" uid="uid://df04pm6gl16en" path="res://scenes/balance_proto/balance_player/balance_player.tscn" id="2_gu3pf"]
@@ -6,6 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://crgm04b4as6mr" path="res://scenes/platform/ice_platform.tscn" id="4_rmc25"]
 [ext_resource type="PackedScene" uid="uid://boak75g7sk8ig" path="res://scenes/platform/web_platform.tscn" id="5_jw2ia"]
 [ext_resource type="PackedScene" uid="uid://oxmhv6mj5eck" path="res://scenes/platform/launch_trigger.tscn" id="6_jbwx2"]
+
+[sub_resource type="Gradient" id="Gradient_i5sg7"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7lkxu"]
+gradient = SubResource("Gradient_i5sg7")
+fill = 1
+fill_from = Vector2(0.512821, 0.521368)
+fill_to = Vector2(0.884615, 0.0769231)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvdfq"]
 bounce = 1.0
@@ -15,11 +24,16 @@ size = Vector2(1145, 650)
 
 [node name="Main" type="Node2D"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+scale = Vector2(1, 0.991802)
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
 [node name="BabyMouse" parent="." instance=ExtResource("1_j57vw")]
-position = Vector2(595, -4556)
+position = Vector2(159, 447)
 
 [node name="BalancePlayer" parent="." instance=ExtResource("2_gu3pf")]
-position = Vector2(597, -4454)
+position = Vector2(161, 549)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
@@ -32,6 +46,14 @@ limit_smoothed = true
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 drag_bottom_margin = 0.3
+
+[node name="PointLight2D" type="PointLight2D" parent="BalancePlayer"]
+visible = false
+scale = Vector2(1, 0.999559)
+color = Color(0.458824, 0.823529, 0.654902, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_7lkxu")
+texture_scale = 6.96
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -74,6 +96,47 @@ scale = Vector2(1.80661, 0.626969)
 [node name="Platform74" parent="Platforms" instance=ExtResource("3_ehvyx")]
 position = Vector2(773, -540)
 scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform97" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1707, -235)
+scale = Vector2(1.80661, 0.626969)
+
+[node name="Platform98" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1545, -224)
+scale = Vector2(1.04661, 0.906969)
+
+[node name="Platform99" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1936, -211)
+scale = Vector2(3.04661, 1.86697)
+
+[node name="Platform100" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-2277, -383)
+scale = Vector2(3.04661, 5.42697)
+
+[node name="Platform106" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0, 0.811765, 0.278431, 1)
+position = Vector2(-2928, -322)
+scale = Vector2(0.629037, 1.34421)
+
+[node name="Platform102" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-3296, -459)
+scale = Vector2(3.04661, 5.42697)
+
+[node name="Platform103" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-3142, -324)
+scale = Vector2(3.04661, 5.42697)
+
+[node name="Platform104" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-3298, -221)
+scale = Vector2(3.04661, 5.42697)
+
+[node name="Platform105" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-3114, -187)
+scale = Vector2(3.04661, 5.42697)
+
+[node name="Platform101" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(-1780, -480)
+scale = Vector2(9.12661, 2.42697)
 
 [node name="Platform29" parent="Platforms" instance=ExtResource("3_ehvyx")]
 position = Vector2(480, -876)
@@ -186,10 +249,6 @@ scale = Vector2(4.80661, 0.626969)
 position = Vector2(261, -1328)
 scale = Vector2(7.16661, 0.626969)
 
-[node name="Platform61" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(-1093, -2636)
-scale = Vector2(7.16661, 0.626969)
-
 [node name="Platform67" parent="Platforms" instance=ExtResource("3_ehvyx")]
 position = Vector2(233, -2754)
 scale = Vector2(7.16661, 0.626969)
@@ -199,8 +258,24 @@ position = Vector2(515, -3758)
 scale = Vector2(1.212, 0.627)
 
 [node name="Platform76" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(529, -3089)
-scale = Vector2(6.482, 0.627)
+position = Vector2(354, -3083)
+scale = Vector2(2.322, 4.34701)
+
+[node name="Platform93" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1034, -2741)
+scale = Vector2(2.082, 1.34701)
+
+[node name="Platform94" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(844, -2854)
+scale = Vector2(1.162, 1.34701)
+
+[node name="Platform95" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(1091, -2964)
+scale = Vector2(2.64201, 1.34701)
+
+[node name="Platform96" parent="Platforms" instance=ExtResource("3_ehvyx")]
+position = Vector2(857, -3070)
+scale = Vector2(1.162, 1.34701)
 
 [node name="Platform78" parent="Platforms" instance=ExtResource("3_ehvyx")]
 position = Vector2(307, -3385)
@@ -239,7 +314,7 @@ position = Vector2(109, -2050)
 scale = Vector2(1.382, 0.627)
 
 [node name="Platform85" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(64, -2173)
+position = Vector2(46, -2174)
 scale = Vector2(1.20661, 0.626969)
 
 [node name="Platform55" parent="Platforms" instance=ExtResource("3_ehvyx")]
@@ -347,9 +422,9 @@ rotation = 1.57183
 scale = Vector2(2.33696, 0.627)
 
 [node name="Platform90" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(741, -3143)
-rotation = 1.57183
-scale = Vector2(2.33696, 0.627)
+position = Vector2(588, -3184)
+rotation = 0.0976779
+scale = Vector2(5.68522, 0.627)
 
 [node name="Platform35" parent="Platforms" instance=ExtResource("3_ehvyx")]
 position = Vector2(-886, -1783)
@@ -462,8 +537,7 @@ position = Vector2(501, -1733)
 scale = Vector2(3.447, 0.68)
 
 [node name="WebPlatform" parent="." instance=ExtResource("5_jw2ia")]
-position = Vector2(134, -2817)
-rotation = 0.49832
+position = Vector2(150, -2796)
 scale = Vector2(2.725, 0.63)
 
 [node name="WebPlatform3" parent="." instance=ExtResource("5_jw2ia")]
@@ -491,6 +565,10 @@ skew = -0.0130732
 launch_force_y = -1500.0
 
 [node name="WebPlatform2" parent="." instance=ExtResource("5_jw2ia")]
-position = Vector2(651, -3145)
+position = Vector2(-61, -3282)
 rotation = -0.603811
 scale = Vector2(2.725, 0.63)
+
+[node name="Platform" parent="." instance=ExtResource("3_ehvyx")]
+position = Vector2(-828, -552)
+scale = Vector2(2.88, 1)
