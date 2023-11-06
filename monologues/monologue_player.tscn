@@ -1,7 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw24dd5kxss8w"]
+[gd_scene load_steps=13 format=3 uid="uid://bw24dd5kxss8w"]
 
 [ext_resource type="Script" path="res://monologues/monologue_player.gd" id="1_qj24p"]
-[ext_resource type="Resource" uid="uid://ro5nyop474yy" path="res://monologues/mono_test.tres" id="2_m6eor"]
+[ext_resource type="Resource" uid="uid://bvkijr1oqi2rj" path="res://monologues/mono_0.tres" id="2_w6c15"]
+[ext_resource type="Resource" uid="uid://0a0e6y8y2k2v" path="res://monologues/mono_1.tres" id="3_ocnw5"]
+[ext_resource type="Resource" uid="uid://oxhyon0v37sh" path="res://monologues/mono_2.tres" id="4_x7doh"]
+[ext_resource type="Resource" uid="uid://b4u1q1uoguifr" path="res://monologues/mono_3.tres" id="5_m7im6"]
+[ext_resource type="Resource" uid="uid://dl4b7bjo6npio" path="res://monologues/mono_4.tres" id="6_nwaxy"]
+[ext_resource type="Resource" uid="uid://286hsx4qftqf" path="res://monologues/mono_5.tres" id="7_j604t"]
+[ext_resource type="Resource" uid="uid://ddiap6t2k04xi" path="res://monologues/mono_6.tres" id="8_lhqvm"]
+[ext_resource type="Resource" uid="uid://cr7cco7moimd1" path="res://monologues/mono_7.tres" id="9_36r8t"]
+[ext_resource type="Resource" uid="uid://da6w73nifacuc" path="res://monologues/mono_8.tres" id="10_6ctkk"]
 
 [sub_resource type="Gradient" id="Gradient_3lbo6"]
 colors = PackedColorArray(0.16153, 0, 0.261719, 1, 0.22644, 0, 0.414063, 1)
@@ -14,7 +22,7 @@ fill_to = Vector2(0.611111, 0)
 [node name="MonologuePlayer" type="CanvasLayer"]
 visible = false
 script = ExtResource("1_qj24p")
-monologues = Array[Resource("res://monologues/monologue.gd")]([ExtResource("2_m6eor")])
+monologues = Array[Resource("res://monologues/monologue.gd")]([ExtResource("2_w6c15"), ExtResource("3_ocnw5"), ExtResource("4_x7doh"), ExtResource("5_m7im6"), ExtResource("6_nwaxy"), ExtResource("7_j604t"), ExtResource("8_lhqvm"), ExtResource("9_36r8t"), ExtResource("10_6ctkk")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -52,3 +60,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "Да куда ж ты катишься опять! Остановись уже, иначе я сам тебя поймаю, а потом в землю посажу, как редиску, пока не вырастешь и сам своими ногами не пойдешь. Интересно, а с мышами вообще такой способ сработает?"
 autowrap_mode = 2
+
+[node name="BoringTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true

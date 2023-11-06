@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://0a0e6y8y2k2v"]
+
+[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_we8hi"]
+[ext_resource type="Script" path="res://monologues/monologue.gd" id="2_6jyrg"]
+
+[resource]
+script = ExtResource("2_6jyrg")
+phrase_texts = Array[String](["Да куда ж ты катишься опять! Остановись уже, иначе я сам тебя поймаю, а потом в землю посажу, как редиску, пока не вырастешь и сам своими ногами не пойдешь. Интересно, а с мышами вообще такой способ сработает?"])
+phrase_times = Array[float]([])
+phrase_audio = ExtResource("1_we8hi")

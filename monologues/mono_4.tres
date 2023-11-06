@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://dl4b7bjo6npio"]
+
+[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_toio4"]
+[ext_resource type="Script" path="res://monologues/monologue.gd" id="2_1r77t"]
+
+[resource]
+script = ExtResource("2_1r77t")
+phrase_texts = Array[String](["Холодно. Неприятно. Шёрстка мерзнет. Ещё и вода, похоже, накапала, лёд везде. Зима не скоро, почему тут так холодно? Под землей вообще такое возможно? Хотя чего я спрашиваю. Я ведь просто крот."])
+phrase_times = Array[float]([])
+phrase_audio = ExtResource("1_toio4")

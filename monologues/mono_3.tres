@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Monologue" load_steps=3 format=3 uid="uid://b4u1q1uoguifr"]
+
+[ext_resource type="AudioStream" uid="uid://c85jfepwu2txx" path="res://sounds/laugh/laugh_1.wav" id="1_egpbi"]
+[ext_resource type="Script" path="res://monologues/monologue.gd" id="2_k5wvg"]
+
+[resource]
+script = ExtResource("2_k5wvg")
+phrase_texts = Array[String](["...я не могу его бросить так. Не могу ведь, да?"])
+phrase_times = Array[float]([])
+phrase_audio = ExtResource("1_egpbi")
