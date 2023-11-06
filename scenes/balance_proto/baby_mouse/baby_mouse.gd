@@ -13,8 +13,8 @@ var teleport_location: Vector2 = Vector2.ZERO
 @onready var animation_player = $AnimationPlayer
 @onready var hit_timer = $HitTimer
 @onready var alone_timer = $AloneTimer
-@onready var random_cry_player_2d = $RandomCryPlayer2D
-@onready var random_laugh_player_2d = $RandomLaughPlayer2D
+@onready var random_cry_player_2d = $RandomCryPlayer2D as RandomAudioStreamPlayer2D
+@onready var random_laugh_player_2d = $RandomLaughPlayer2D as RandomAudioStreamPlayer2D
 
 var is_alone := false
 
@@ -22,6 +22,16 @@ func _ready():
 	body_entered.connect(on_collision)
 	alone_timer.timeout.connect(on_alone_timer_end)
 
+func play_cry_sound():
+	var i = randi_range(0,3)
+	if i == 0:
+		random_cry_player_2d.play_random_if_not_playing()
+		random_laugh_player_2d.stop()
+
+
+func play_laugh_sound():
+	random_laugh_player_2d.play_random_if_not_playing()
+	random_cry_player_2d.stop()
 
 
 func _process(delta):
@@ -66,6 +76,8 @@ func on_collision(body:Node):
 	if body.is_in_group("dirt"):
 		audio_stream_player_2d.play()
 		hit_timer.start()
+		if alone_timer.time_left > 0:
+			alone_timer.start()
 
 
 func make_alone():
@@ -75,6 +87,7 @@ func make_alone():
 func make_not_alone():
 	alone_timer.stop()
 	is_alone = false
+	random_cry_player_2d.stop()
 
 func on_alone_timer_end():
 	is_alone = true
