@@ -1,15 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://46vyvn233cqi"]
+[gd_scene load_steps=31 format=3 uid="uid://46vyvn233cqi"]
 
 [ext_resource type="Script" path="res://scenes/balance_proto/Game_Level.gd" id="1_8v8ak"]
 [ext_resource type="PackedScene" uid="uid://b6otlsimcn4nr" path="res://scenes/balance_proto/baby_mouse/baby_mouse.tscn" id="1_j57vw"]
 [ext_resource type="PackedScene" uid="uid://df04pm6gl16en" path="res://scenes/balance_proto/balance_player/balance_player.tscn" id="2_gu3pf"]
 [ext_resource type="PackedScene" uid="uid://bs8pkjy81slme" path="res://scenes/platform/platform.tscn" id="3_ehvyx"]
 [ext_resource type="PackedScene" uid="uid://crgm04b4as6mr" path="res://scenes/platform/ice_platform.tscn" id="4_rmc25"]
+[ext_resource type="Texture2D" uid="uid://bedhq3rd3tbsm" path="res://scenes/background/zone 2-1.png" id="5_de83s"]
 [ext_resource type="PackedScene" uid="uid://boak75g7sk8ig" path="res://scenes/platform/web_platform.tscn" id="5_jw2ia"]
 [ext_resource type="PackedScene" uid="uid://oxmhv6mj5eck" path="res://scenes/platform/launch_trigger.tscn" id="6_jbwx2"]
+[ext_resource type="Texture2D" uid="uid://3hjn3fai4p0y" path="res://scenes/background/zone 2-2.png" id="6_oqtvj"]
+[ext_resource type="Texture2D" uid="uid://4woukdjry1qb" path="res://scenes/background/zone 2-3.png" id="7_2ya8w"]
+[ext_resource type="Texture2D" uid="uid://7djppdap1ty2" path="res://scenes/background/zone 3-1.png" id="8_bsgl3"]
 [ext_resource type="PackedScene" uid="uid://dhov5wwpgirww" path="res://scenes/platform/dirt/platform_dirt_1.tscn" id="8_c8k4n"]
 [ext_resource type="PackedScene" uid="uid://cq38sg58g2765" path="res://scenes/platform/dirt/platform_dirt_5.tscn" id="9_joly3"]
+[ext_resource type="Texture2D" uid="uid://cddjwkyk0vkdh" path="res://scenes/background/zone 3-2.png" id="9_toms2"]
 [ext_resource type="PackedScene" uid="uid://knq2um7fibwa" path="res://scenes/platform/dirt/platform_dirt_4.tscn" id="10_5s5rd"]
+[ext_resource type="Texture2D" uid="uid://cb0ihyvva36hq" path="res://scenes/background/zone 3-3.png" id="10_eps22"]
+[ext_resource type="Texture2D" uid="uid://dfy7ye26twmtn" path="res://scenes/background/zone 3-4.png" id="11_exk3d"]
 [ext_resource type="PackedScene" uid="uid://bdoq13tituby" path="res://scenes/platform/dirt/platform_dirt_3.tscn" id="11_pynog"]
 [ext_resource type="PackedScene" uid="uid://dlqh41x2f8j7m" path="res://scenes/platform/dirt/platform_dirt_2.tscn" id="12_g55mg"]
 [ext_resource type="PackedScene" uid="uid://b5ke867pwmuan" path="res://scenes/background/background.tscn" id="13_jr6ih"]
@@ -58,37 +65,37 @@ metadata/_edit_lock_ = true
 [node name="Background4" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
 offset_top = -1938.0
 offset_bottom = -1289.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("5_de83s")
 metadata/_edit_lock_ = true
 
 [node name="Background5" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
 offset_top = -2586.0
 offset_bottom = -1937.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("6_oqtvj")
 metadata/_edit_lock_ = true
 
 [node name="Background6" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
 offset_top = -3235.0
 offset_bottom = -2586.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("7_2ya8w")
 metadata/_edit_lock_ = true
 
 [node name="Background7" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
 offset_top = -3883.0
 offset_bottom = -3234.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("8_bsgl3")
 metadata/_edit_lock_ = true
 
 [node name="Background8" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
 offset_top = -4531.0
 offset_bottom = -3882.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("9_toms2")
 metadata/_edit_lock_ = true
 
 [node name="Background9" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
 offset_top = -5179.0
 offset_bottom = -4530.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("10_eps22")
 metadata/_edit_lock_ = true
 
 [node name="Background10" parent="Backgrounds" instance=ExtResource("13_jr6ih")]
@@ -96,10 +103,36 @@ offset_left = 3.0
 offset_top = -5830.0
 offset_right = 1157.0
 offset_bottom = -5181.0
-texture = ExtResource("15_oeyov")
+texture = ExtResource("11_exk3d")
 metadata/_edit_lock_ = true
 
+[node name="Polygon2D" type="Polygon2D" parent="Backgrounds"]
+z_index = 11
+color = Color(0.141176, 0.129412, 0.145098, 1)
+polygon = PackedVector2Array(1087, -5769, 1087, 632, 1156, 632, 1152, -5768)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Backgrounds"]
+z_index = 11
+position = Vector2(-1092, -8)
+color = Color(0.141176, 0.129412, 0.145098, 1)
+polygon = PackedVector2Array(1087, -5769, 1087, 632, 1156, 632, 1152, -5768)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Backgrounds"]
+z_index = 11
+position = Vector2(-20.1366, 0)
+scale = Vector2(1.03415, 1)
+color = Color(0.141176, 0.129412, 0.145098, 1)
+polygon = PackedVector2Array(9, 614, 1143, 616, 1144.31, 639.554, 1146, 670, 4, 668)
+
 [node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0.294118, 0.247059, 0.278431, 1)
+self_modulate = Color(0.141176, 0.129412, 0.145098, 1)
+z_index = 10
+position = Vector2(1120, -2569)
+rotation = 3.14159
+scale = Vector2(1.007, -100)
 
 [node name="Platform" parent="Platforms" instance=ExtResource("3_ehvyx")]
 modulate = Color(0.466667, 0.45098, 1, 1)
@@ -178,10 +211,6 @@ scale = Vector2(18, 0.8)
 
 [node name="Platform68" parent="Platforms" instance=ExtResource("3_ehvyx")]
 position = Vector2(22, -3382)
-scale = Vector2(0.8, 10)
-
-[node name="Platform69" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(1126, -3382)
 scale = Vector2(0.8, 10)
 
 [node name="Platform79" parent="Platforms" instance=ExtResource("3_ehvyx")]
@@ -295,12 +324,9 @@ rotation = -0.47587
 scale = Vector2(6.80661, 0.626969)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("3_ehvyx")]
+modulate = Color(0.141176, 0.129412, 0.145098, 1)
+z_index = 10
 position = Vector2(30, -2557)
-rotation = 3.14159
-scale = Vector2(1.007, -100)
-
-[node name="Platform11" parent="Platforms" instance=ExtResource("3_ehvyx")]
-position = Vector2(1120, -2569)
 rotation = 3.14159
 scale = Vector2(1.007, -100)
 
@@ -437,11 +463,12 @@ position = Vector2(792, -3737)
 rotation = 1.5708
 
 [node name="Platform49" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(734, -1733)
+position = Vector2(734, -1730)
+rotation = 0.0719585
 scale = Vector2(0.215, 0.25)
 
 [node name="Platform51" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(301, -1476)
+position = Vector2(300, -1477)
 scale = Vector2(0.265, 0.25)
 
 [node name="Platform59" parent="Platforms" instance=ExtResource("8_c8k4n")]
@@ -449,17 +476,17 @@ position = Vector2(135, -1624)
 scale = Vector2(0.325, 0.25)
 
 [node name="Platform73" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(412, -1641)
+position = Vector2(410, -1638)
 rotation = 1.5708
 scale = Vector2(0.325, 0.25)
 
 [node name="Platform109" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(380, -1519)
+position = Vector2(380, -1520)
 rotation = 2.1348
-scale = Vector2(0.285, 0.25)
+scale = Vector2(0.265, 0.25)
 
 [node name="Platform60" parent="Platforms" instance=ExtResource("8_c8k4n")]
-position = Vector2(764, -1814)
+position = Vector2(765, -1806)
 rotation = 1.5708
 
 [node name="Platform61" parent="Platforms" instance=ExtResource("8_c8k4n")]
@@ -626,7 +653,7 @@ position = Vector2(738, -1325)
 scale = Vector2(0.235, 0.25)
 
 [node name="Platform46" parent="Platforms" instance=ExtResource("17_eknt7")]
-position = Vector2(976, -2231)
+position = Vector2(1008, -2251)
 rotation = -0.626877
 scale = Vector2(0.235, 0.25)
 
@@ -658,6 +685,7 @@ color = Color(0.141176, 0.129412, 0.145098, 1)
 polygon = PackedVector2Array(54, -1321, 454, -1320, 452, -1426, 489, -1426, 481, -1206, 54, -1019)
 
 [node name="Polygon2D5" type="Polygon2D" parent="Polygons"]
+position = Vector2(32, -20)
 color = Color(0.141176, 0.129412, 0.145098, 1)
 polygon = PackedVector2Array(859, -2131, 1110, -2320, 1117, -2014, 991, -2016, 915, -2053)
 
@@ -680,10 +708,10 @@ scale = Vector2(1, 0.991802)
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [node name="BabyMouse" parent="." instance=ExtResource("1_j57vw")]
-position = Vector2(407, 398)
+position = Vector2(286, 447)
 
 [node name="BalancePlayer" parent="." instance=ExtResource("2_gu3pf")]
-position = Vector2(407, 499)
+position = Vector2(285, 540)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="BalancePlayer"]
@@ -714,11 +742,11 @@ position = Vector2(3613, -1759)
 shape = SubResource("RectangleShape2D_86fmi")
 
 [node name="ice_platform_new" parent="." instance=ExtResource("18_cxuy7")]
-position = Vector2(251, -1337)
+position = Vector2(251, -1333)
 scale = Vector2(0.48, 0.25)
 
 [node name="ice_platform_new2" parent="." instance=ExtResource("18_cxuy7")]
-position = Vector2(503, -1733)
+position = Vector2(502, -1733)
 scale = Vector2(0.27, 0.24)
 
 [node name="ice_platform_new3" parent="." instance=ExtResource("18_cxuy7")]
@@ -759,7 +787,7 @@ scale = Vector2(0.215, 0.185)
 position = Vector2(0, -37.8379)
 rotation = 0.00319329
 scale = Vector2(39.371, 8.749)
-launch_force_y = -1700.0
+launch_force_y = -1750.0
 
 [node name="web_platform_new12" parent="." instance=ExtResource("18_5co4s")]
 position = Vector2(401, -4472)
